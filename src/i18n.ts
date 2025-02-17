@@ -1,4 +1,4 @@
-import { register, init } from 'svelte-i18n';
+import { register, init, locale } from 'svelte-i18n';
 
 // Registrazione delle lingue
 register('it', () => import('./locales/it.json'));
@@ -11,3 +11,5 @@ export async function setupI18n() {
     initialLocale: 'it', // Puoi modificare questo valore per ottenere la lingua dal navigatore
   });
 }
+
+export const changeLocale = (lang: string) => locale.set(lang);
