@@ -6,7 +6,7 @@
     export let onClose: () => void;
   </script>
   
-  <div class="fixed inset-0 bg-gray-900 bg-opacity-75 z-50 flex items-center justify-center">
+  <div class="fixed inset-0 bg-gray-900 bg-opacity-75 z-50 flex items-center justify-center" style="font-family: 'Open Sans', Helvetica, Arial, sans-serif;">
     <div class="bg-white p-6 rounded-lg shadow-lg max-w-2xl w-full relative">
       <button on:click={onClose} class="absolute top-2 right-2 text-gray-600 hover:text-gray-800">
         &times;
@@ -32,7 +32,7 @@
         <p class="text-sm text-gray-600 mb-2">{card.contextualDescription[currentLanguage]}</p>
       {/if}
       {#if card.oracle[currentLanguage]}
-        <p class="text-sm text-gray-600"><strong>{t('oracle', currentLanguage)}:</strong> {card.oracle[currentLanguage]}</p>
+      <p class="text-lg mb-2" style="color: rgb(205, 22, 25);"><strong>{t('oracle', currentLanguage)}:</strong> {card.oracle[currentLanguage]}</p>
       {/if}
     </div>
   </div>

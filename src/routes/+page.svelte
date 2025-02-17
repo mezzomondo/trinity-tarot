@@ -60,7 +60,7 @@
   }
 </script>
 
-<div class="flex flex-col items-center justify-start min-h-screen bg-gray-100 p-4 pt-10">
+<div class="flex flex-col items-center justify-start min-h-screen bg-gray-100 p-4 pt-10" style="font-family: 'Open Sans', Helvetica, Arial, sans-serif;">
   {#if !showCards}
     <button on:click={startGame} class="px-8 py-4 text-lg font-bold text-white bg-blue-600 rounded-lg shadow-lg hover:bg-blue-700 transition-transform transform hover:scale-105">
       {t('start', currentLanguage)}
