@@ -16,7 +16,12 @@
         <h1 class="text-2xl font-bold text-center mb-2" style="color: rgb(205, 22, 25);">
             {t('gameInstructions', currentLanguage).toUpperCase()}
         </h1>
-
+        <h1 class="text-2xl font-bold text-left mb-2 text-black">
+            {t('oracleGameTitle', currentLanguage).toUpperCase()}
+          </h1>
+          <p class="text-base text-black text-left mb-4 px-6">
+            {t('oracleGameText', currentLanguage)}
+          </p>
         <img src="/src/assets/reading-the-axial-cross-oracle.jpg" alt="Axial Cross Oracle" class="w-full max-w-2xl rounded-lg shadow-md mb-6">
 
     </div>
