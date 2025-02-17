@@ -3,10 +3,12 @@
   import { language, cards } from '../stores/cards';
   import type { Card } from '../types';
   import CardComponent from '../components/Card.svelte';
+  import PopUp from '../components/PopUp.svelte';
   import { t } from '../translations';
 
   const selectedCards = writable<Card[]>([]);
   let currentLanguage: 'it' | 'en' = get(language) as 'it' | 'en';
+  let selectedCard: Card | null = null;
   language.subscribe((value) => { currentLanguage = value as 'it' | 'en'; });
 
   let showCards = false;
@@ -48,6 +50,14 @@
     }
     return null;
   }, null);
+
+  function handleCardSelect(card: Card) {
+    selectedCard = card;
+  }
+
+  function closePopUp() {
+    selectedCard = null;
+  }
 </script>
 
 <div class="flex flex-col items-center justify-start min-h-screen bg-gray-100 p-4 pt-10">
@@ -61,7 +71,7 @@
     <div class="flex flex-col items-center gap-6">
       <div class="flex justify-center gap-6">
         {#each $selectedCards as card, index}
-          <CardComponent {card} {currentLanguage} label={index === 0 ? 'A' : index === 1 ? 'B' : index === 2 ? 'C' : 'D'} />
+          <CardComponent {card} {currentLanguage} label={index === 0 ? 'A' : index === 1 ? 'B' : index === 2 ? 'C' : 'D'} onSelect={handleCardSelect} />
         {/each}
       </div>
       {#if !showXY}
@@ -72,11 +82,11 @@
       <div class="grid grid-cols-5 gap-6 mt-4">
         <div></div>
         {#if showXY && $cardX}
-          <CardComponent card={$cardX} {currentLanguage} label="X" />
+          <CardComponent card={$cardX} {currentLanguage} label="X" onSelect={handleCardSelect} />
         {/if}
         <div></div>
         {#if showXY && $cardY}
-          <CardComponent card={$cardY} {currentLanguage} label="Y" />
+          <CardComponent card={$cardY} {currentLanguage} label="Y" onSelect={handleCardSelect} />
         {/if}
         <div></div>
       </div>
@@ -86,8 +96,12 @@
         </button>
       {/if}
       {#if showZ && $cardZ}
-        <CardComponent card={$cardZ} {currentLanguage} label="Z" />
+        <CardComponent card={$cardZ} {currentLanguage} label="Z" onSelect={handleCardSelect} />
       {/if}
     </div>
+  {/if}
+
+  {#if selectedCard}
+    <PopUp card={selectedCard} {currentLanguage} onClose={closePopUp} />
   {/if}
 </div>
