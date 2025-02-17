@@ -113,6 +113,9 @@
       {/if}
       {#if showZ && $cardZ}
         <CardComponent card={$cardZ} {currentLanguage} label="Z" onSelect={handleCardSelect} />
+          <button on:click={startGame} class="mt-4 px-6 py-2 text-black bg-white border border-black rounded-lg shadow-md hover:bg-gray-200 transition-transform transform hover:scale-105">
+            {t('restart', currentLanguage)}
+          </button>
       {/if}
     </div>
   {/if}
