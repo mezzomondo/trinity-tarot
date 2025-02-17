@@ -112,20 +112,26 @@
         <div></div>
       </div>
       {#if showXY && !showZ}
-        <button on:click={calculateZ} class="px-6 py-3 text-lg font-bold text-black bg-white border border-black rounded-lg shadow-lg hover:bg-gray-200 transition-transform transform hover:scale-105 mt-6">
+        <button on:click={calculateZ} class="mb-8 px-6 py-3 text-lg font-bold text-black bg-white border border-black rounded-lg shadow-lg hover:bg-gray-200 transition-transform transform hover:scale-105 mt-6">
           {t('calculateZ', currentLanguage)}
         </button>
       {/if}
       {#if showZ && $cardZ}
         <CardComponent card={$cardZ} {currentLanguage} label="Z" onSelect={handleCardSelect} />
-          <button on:click={startGame} class="mt-4 px-6 py-2 text-black bg-white border border-black rounded-lg shadow-md hover:bg-gray-200 transition-transform transform hover:scale-105">
+          <button on:click={startGame} class="mb-8 mt-4 px-6 py-2 font-bold text-black bg-white border border-black rounded-lg shadow-lg hover:bg-gray-200 transition-transform transform hover:scale-105">
             {t('restart', currentLanguage)}
           </button>
       {/if}
+    </div>
+    <div class="flex flex-row gap-4">
+      <a href="/instructions" class="px-6 py-3 text-lg font-bold text-black bg-white border border-black rounded-lg shadow-lg hover:bg-gray-200 transition-transform transform hover:scale-105">
+        {t('instructions', currentLanguage)}
+      </a>
     </div>
   {/if}
 
   {#if selectedCard}
     <PopUp card={selectedCard} {currentLanguage} onClose={closePopUp} />
   {/if}
+  
 </div>

@@ -35,5 +35,10 @@
         <p class="text-base text-black text-left mb-8 px-6" style="white-space: pre-wrap">
             {t('instAxialText', currentLanguage)}
         </p>
+        <div class="flex flex-row gap-4">
+            <a href="/" class="px-6 py-3 text-lg font-bold text-black bg-white border border-black rounded-lg shadow-lg hover:bg-gray-200 transition-transform transform hover:scale-105">
+              Home
+            </a>
+        </div>
     </div>
 </div>
