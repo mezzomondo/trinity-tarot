@@ -9,6 +9,10 @@
     <p class="font-bold text-lg">{label}</p>
     <img src={card.image} alt={card.name[currentLanguage]} class="w-full h-48 object-contain rounded-md" />
     <p class="text-sm font-bold mt-2">#{card.id} - {card.name[currentLanguage]}</p>
-    <p class="text-xs text-gray-600 mt-1">{card.description[currentLanguage]}</p>
-    <p class="text-xs text-gray-400 mt-1">({card.meaning[currentLanguage]})</p>
+    {#if label === 'Z'}
+      <p class="text-xs text-gray-600 mt-1 italic">{card.oracle[currentLanguage]}</p>
+    {:else}
+      <p class="text-xs text-gray-600 mt-1">{card.description[currentLanguage]}</p>
+      <p class="text-xs text-gray-400 mt-1">({card.meaning[currentLanguage]})</p>
+    {/if}
   </div>
