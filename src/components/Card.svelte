@@ -12,7 +12,7 @@
     {#if label === 'Z'}
       <p class="text-xs text-gray-600 mt-1 italic">{card.oracle[currentLanguage]}</p>
     {:else}
-      <p class="text-xs text-gray-600 mt-1">{card.description[currentLanguage]}</p>
-      <p class="text-xs text-gray-400 mt-1">({card.meaning[currentLanguage]})</p>
+      <p class="text-xs text-gray-600 mt-1">{card.figurativeElement[currentLanguage]}</p>
+      <p class="text-xs text-gray-400 mt-1">{card.meaning[currentLanguage]}</p>
     {/if}
   </div>
