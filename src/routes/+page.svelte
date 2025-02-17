@@ -5,6 +5,7 @@
   import CardComponent from '../components/Card.svelte';
   import PopUp from '../components/PopUp.svelte';
   import { t } from '../translations';
+  import LanguageSwitcher from '../components/LanguageSwitcher.svelte';
 
   const selectedCards = writable<Card[]>([]);
   let currentLanguage: 'it' | 'en' = get(language) as 'it' | 'en';
@@ -61,9 +62,13 @@
 </script>
 
 <div class="flex flex-col items-center justify-start min-h-screen bg-gray-100 p-4 pt-10" style="font-family: 'Open Sans', Helvetica, Arial, sans-serif;">
+  <div class="absolute top-4 right-4">
+    <LanguageSwitcher />
+  </div> 
   {#if !showCards}
     <div class="relative bg-gray-200 p-6 rounded-lg shadow-md flex flex-col items-center w-full max-w-4xl">
-      <h1 class="text-2xl font-bold text-black mb-2">{t('oracleGameTitle', currentLanguage)}</h1>
+      <h1 class="text-2xl font-bold text-black mb-2">{t('oracleGameTitle', currentLanguage).toUpperCase()}</h1>
+      <h1 class="text-2xl font-bold text-black mb-2">{t('oracleGameSubTitle', currentLanguage).toUpperCase()}</h1>
       <p class="text-base text-black text-center mb-4 px-6">{t('oracleGameText', currentLanguage)}</p>
       <div class="relative w-full">
         <img src="/src/assets/trinity-tarot-opener.jpg" alt="Trinity Tarot Opener" class="w-full h-64 object-cover rounded-lg" />
