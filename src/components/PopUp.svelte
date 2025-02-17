@@ -1,5 +1,6 @@
 <script lang="ts">
     import type { Card } from '../types';
+    import { t } from '../translations';
     export let card: Card;
     export let currentLanguage: 'it' | 'en';
     export let onClose: () => void;
@@ -15,11 +16,23 @@
       {#if card.alternateImage}
         <img src={card.alternateImage} alt={card.name[currentLanguage]} class="w-full h-48 object-contain rounded-md mb-4" />
       {/if}
-      <p class="text-sm text-gray-600 mb-2"><strong>Figurative Element:</strong> {card.figurativeElement[currentLanguage]}</p>
-      <p class="text-sm text-gray-600 mb-2"><strong>Ability:</strong> {card.ability[currentLanguage]}</p>
-      <p class="text-sm text-gray-600 mb-2"><strong>Meaning:</strong> {card.meaning[currentLanguage]}</p>
-      <p class="text-sm text-gray-600 mb-2"><strong>Number and Quantity:</strong> {card.numberAndQuantity[currentLanguage]}</p>
-      <p class="text-sm text-gray-600 mb-2"><strong>Contextual Description:</strong> {card.contextualDescription[currentLanguage]}</p>
-      <p class="text-sm text-gray-600"><strong>Oracle:</strong> {card.oracle[currentLanguage]}</p>
+      {#if card.figurativeElement[currentLanguage]}
+        <p class="text-sm text-gray-600 mb-2"><strong>{t('figurativeElement', currentLanguage)}:</strong> {card.figurativeElement[currentLanguage]}</p>
+      {/if}
+      {#if card.ability[currentLanguage]}
+        <p class="text-sm text-gray-600 mb-2"><strong>{t('ability', currentLanguage)}:</strong> {card.ability[currentLanguage]}</p>
+      {/if}
+      {#if card.meaning[currentLanguage]}
+        <p class="text-sm text-gray-600 mb-2"><strong>{t('meaning', currentLanguage)}:</strong> {card.meaning[currentLanguage]}</p>
+      {/if}
+      {#if card.numberAndQuantity[currentLanguage]}
+        <p class="text-sm text-gray-600 mb-2"><strong>{t('numberAndQuantity', currentLanguage)}:</strong> {card.numberAndQuantity[currentLanguage]}</p>
+      {/if}
+      {#if card.contextualDescription[currentLanguage]}
+        <p class="text-sm text-gray-600 mb-2">{card.contextualDescription[currentLanguage]}</p>
+      {/if}
+      {#if card.oracle[currentLanguage]}
+        <p class="text-sm text-gray-600"><strong>{t('oracle', currentLanguage)}:</strong> {card.oracle[currentLanguage]}</p>
+      {/if}
     </div>
   </div>
