@@ -13,16 +13,27 @@
         <LanguageSwitcher />
     </div> 
     <div class="relative bg-white p-6 rounded-lg shadow-md flex flex-col items-center w-full max-w-4xl">
-        <h1 class="text-2xl font-bold text-center mb-2" style="color: rgb(205, 22, 25);">
+        <h1 class="text-2xl font-bold text-center mb-10" style="color: rgb(205, 22, 25);">
             {t('gameInstructions', currentLanguage).toUpperCase()}
         </h1>
         <h1 class="text-2xl font-bold text-left mb-2 text-black">
-            {t('oracleGameTitle', currentLanguage).toUpperCase()}
-          </h1>
-          <p class="text-base text-black text-left mb-4 px-6">
+            {t('instGameTitle', currentLanguage).toUpperCase()}
+        </h1>
+        <p class="text-base text-black text-left mb-8 px-6">
             {t('oracleGameText', currentLanguage)}
-          </p>
-        <img src="/src/assets/reading-the-axial-cross-oracle.jpg" alt="Axial Cross Oracle" class="w-full max-w-2xl rounded-lg shadow-md mb-6">
-
+        </p>
+        <h1 class="text-2xl font-bold text-left mb-2 text-black">
+            {t('instLayingTitle', currentLanguage).toUpperCase()}
+        </h1>
+        <p class="text-base text-black text-left mb-8 px-6">
+            {t('instLayingText', currentLanguage)}
+        </p>
+        <h1 class="text-2xl font-bold text-left mb-8 text-black">
+            {t('instAxialTitle', currentLanguage).toUpperCase()}
+        </h1>
+        <img src="/src/assets/reading-the-axial-cross-oracle.jpg" alt="Axial Cross Oracle" class="w-full max-w-2xl rounded-lg shadow-md mb-8">
+        <p class="text-base text-black text-left mb-8 px-6" style="white-space: pre-wrap">
+            {t('instAxialText', currentLanguage)}
+        </p>
     </div>
 </div>
