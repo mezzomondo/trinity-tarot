@@ -5,7 +5,13 @@ import { defineConfig } from 'vite';
 
 export default defineConfig({
 	plugins: [sveltekit(), tailwindcss()],
-
+	server: {
+		// other server configurations...
+		allowedHosts: [
+		  'krill-moving-lemur.ngrok-free.app', // Add your ngrok host here
+		  // you can add other hosts if needed
+		],
+	},
 	test: {
 		workspace: [
 			{
