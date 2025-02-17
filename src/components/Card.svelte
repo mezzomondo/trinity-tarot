@@ -3,6 +3,15 @@
     export let card: Card;
     export let label: string;
     export let currentLanguage: 'it' | 'en';
+  
+    function truncatedText(text: string, maxLength: number): string {
+    if (text.length <= maxLength) {
+      return text;
+    }
+    const truncated = text.slice(0, maxLength);
+    const lastSpaceIndex = truncated.lastIndexOf(' ');
+    return (lastSpaceIndex > 0 ? truncated.slice(0, lastSpaceIndex) : truncated) + '...';
+  }
   </script>
   
   <div class="flex flex-col items-center border border-gray-300 p-4 rounded-lg shadow bg-white w-72 h-96">
@@ -13,6 +22,6 @@
       <p class="text-xs text-gray-600 mt-1 italic">{card.oracle[currentLanguage]}</p>
     {:else}
       <p class="text-xs text-gray-600 mt-1">{card.figurativeElement[currentLanguage]}</p>
-      <p class="text-xs text-gray-400 mt-1">{card.meaning[currentLanguage]}</p>
+      <p class="text-xs text-gray-400 mt-1">{truncatedText(card.meaning[currentLanguage], 100)}</p>
     {/if}
   </div>
