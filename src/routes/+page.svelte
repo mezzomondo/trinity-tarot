@@ -62,7 +62,7 @@
 
 <div class="flex flex-col items-center justify-start min-h-screen bg-gray-100 p-4 pt-10" style="font-family: 'Open Sans', Helvetica, Arial, sans-serif;">
   {#if !showCards}
-    <div class="relative bg-white p-6 rounded-lg shadow-md flex flex-col items-center w-full max-w-4xl">
+    <div class="relative bg-gray-200 p-6 rounded-lg shadow-md flex flex-col items-center w-full max-w-4xl">
       <h1 class="text-2xl font-bold text-black mb-2">{t('oracleGameTitle', currentLanguage)}</h1>
       <p class="text-base text-black text-center mb-4 px-6">{t('oracleGameText', currentLanguage)}</p>
       <div class="relative w-full">
@@ -74,6 +74,12 @@
       <a href="/instructions" class="text-black hover:underline mt-4">
         {t('instructions', currentLanguage)}
       </a>
+      <div class="flex flex-col items-center mt-6">
+        <img src="/src/assets/logo-ugo-dossi-weiß-transparent-footer.png" alt="Ugo Dossi Logo" class="mb-2" />
+        <p class="text-sm text-gray-600">© 2021 UGO DOSSI</p>
+        <p class="text-sm text-gray-600">UGODOSSI@UGODOSSI.COM</p>
+        <a href="https://ugodossi.com/trinity-tarot/" class="text-sm text-black hover:underline">ugodossi.com/trinity-tarot</a>
+      </div>
     </div>
   {/if}
 
