@@ -62,9 +62,19 @@
 
 <div class="flex flex-col items-center justify-start min-h-screen bg-gray-100 p-4 pt-10" style="font-family: 'Open Sans', Helvetica, Arial, sans-serif;">
   {#if !showCards}
-    <button on:click={startGame} class="px-8 py-4 text-lg font-bold text-white bg-blue-600 rounded-lg shadow-lg hover:bg-blue-700 transition-transform transform hover:scale-105">
-      {t('start', currentLanguage)}
-    </button>
+    <div class="relative bg-white p-6 rounded-lg shadow-md flex flex-col items-center w-full max-w-4xl">
+      <h1 class="text-2xl font-bold text-black mb-2">{t('oracleGameTitle', currentLanguage)}</h1>
+      <p class="text-base text-black text-center mb-4 px-6">{t('oracleGameText', currentLanguage)}</p>
+      <div class="relative w-full">
+        <img src="/src/assets/trinity-tarot-opener.jpg" alt="Trinity Tarot Opener" class="w-full h-64 object-cover rounded-lg" />
+      </div>
+      <button on:click={startGame} class="px-6 py-3 text-lg font-bold text-black bg-white border border-black rounded-lg shadow-lg hover:bg-gray-200 transition-transform transform hover:scale-105 mt-6">
+        {t('start', currentLanguage)}
+      </button>
+      <a href="/instructions" class="text-black hover:underline mt-4">
+        {t('instructions', currentLanguage)}
+      </a>
+    </div>
   {/if}
 
   {#if showCards}
@@ -75,7 +85,7 @@
         {/each}
       </div>
       {#if !showXY}
-        <button on:click={calculateXY} class="mt-4 px-6 py-2 text-white bg-blue-600 rounded-lg shadow-md hover:bg-blue-700 transition-transform transform hover:scale-105">
+        <button on:click={calculateXY} class="px-6 py-3 text-lg font-bold text-black bg-white border border-black rounded-lg shadow-lg hover:bg-gray-200 transition-transform transform hover:scale-105 mt-6">
           {t('calculateXY', currentLanguage)}
         </button>
       {/if}
@@ -91,7 +101,7 @@
         <div></div>
       </div>
       {#if showXY && !showZ}
-        <button on:click={calculateZ} class="mt-4 px-6 py-2 text-white bg-blue-600 rounded-lg shadow-md hover:bg-blue-700 transition-transform transform hover:scale-105">
+        <button on:click={calculateZ} class="px-6 py-3 text-lg font-bold text-black bg-white border border-black rounded-lg shadow-lg hover:bg-gray-200 transition-transform transform hover:scale-105 mt-6">
           {t('calculateZ', currentLanguage)}
         </button>
       {/if}
