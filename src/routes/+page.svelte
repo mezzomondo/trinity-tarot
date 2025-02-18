@@ -33,7 +33,7 @@
       calculateZ();
     }
   }
-  
+
   function calculateXY() {
     showXY = true;
   }
@@ -100,12 +100,6 @@
       <div class="relative w-full">
         <img src="/images/trinity-tarot-opener.jpg" alt="Trinity Tarot Opener" class="w-full h-64 object-cover rounded-lg" />
       </div>
-      <button on:click={startGame} class="px-6 py-3 text-lg font-bold text-black bg-white border border-black rounded-lg shadow-lg hover:bg-gray-200 transition-transform transform hover:scale-105 mt-6">
-        {#await $t('start')}{:then translatedText}{translatedText}{/await}
-      </button>
-      <button on:click={openInstructions} class="mt-4 text-black hover:underline">
-        {#await $t('instructions')}{:then translatedText}{translatedText}{/await}
-      </button>
       <div class="flex flex-col items-center mt-6">
         <img src="/images/logo-ugo-dossi-weiß-transparent-footer.png" alt="Ugo Dossi Logo" class="mb-2" />
         <p class="text-sm text-gray-600">© 2021 UGO DOSSI</p>
@@ -168,8 +162,5 @@
 <FooterBar 
   onStartGame={startGame} 
   onNextStep={nextStep}
-  onCalculateXY={calculateXY} 
-  onCalculateZ={calculateZ} 
-  onRestart={restartGame} 
-  {currentLanguage} 
+  onShowInstructions={openInstructions}
 />
