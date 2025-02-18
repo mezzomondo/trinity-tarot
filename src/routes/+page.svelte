@@ -1,15 +1,16 @@
 <script lang="ts">
   import { writable, derived, get } from 'svelte/store';
-  import { locale, t } from 'svelte-i18n';
   import { cards } from '../stores/cards';
   import type { Card } from '../types';
   import CardComponent from '../components/Card.svelte';
   import PopUp from '../components/PopUp.svelte';
+  import { locale, t } from 'svelte-i18n';
   import LanguageSwitcher from '../components/LanguageSwitcher.svelte';
+  import FooterBar from '../components/FooterBar.svelte';
 
   const selectedCards = writable<Card[]>([]);
-  let selectedCard: Card | null = null;
   let currentLanguage: 'it' | 'en' = get(locale) as 'it' | 'en';
+  let selectedCard: Card | null = null;
   locale.subscribe((value) => { currentLanguage = value as 'it' | 'en'; });
 
   let showCards = false;
@@ -29,6 +30,14 @@
 
   function calculateZ() {
     showZ = true;
+  }
+
+  function restartGame() {
+    showCards = false;
+    showXY = false;
+    showZ = false;
+    selectedCards.set([]);
+    selectedCard = null;
   }
 
   const cardX = derived(selectedCards, ($selectedCards) => {
@@ -61,23 +70,23 @@
   }
 </script>
 
-<div class="flex flex-col items-center justify-start min-h-screen bg-gray-100 p-4 pt-10 font-sans">
+<div class="flex flex-col items-center justify-start min-h-screen bg-gray-100 p-4 pt-10" style="font-family: 'Open Sans', Helvetica, Arial, sans-serif;">
   <div class="absolute top-4 right-4">
     <LanguageSwitcher />
   </div> 
   {#if !showCards}
     <div class="relative bg-gray-200 p-6 rounded-lg shadow-md flex flex-col items-center w-full max-w-4xl">
-      <h1 class="text-2xl font-bold text-black mb-2 text-center">{$t('oracleGameTitle').toUpperCase()}</h1>
-      <h1 class="text-2xl font-bold text-black mb-2 text-center">{$t('oracleGameSubTitle').toUpperCase()}</h1>
-      <p class="text-base text-black text-center mb-4 px-6">{$t('oracleGameText')}</p>
+      <h1 class="text-2xl font-bold text-black mb-2">{#await $t('oracleGameTitle')}{:then translatedText}{translatedText.toUpperCase()}{/await}</h1>
+      <h1 class="text-2xl font-bold text-black mb-2">{#await $t('oracleGameSubTitle')}{:then translatedText}{translatedText.toUpperCase()}{/await}</h1>
+      <p class="text-base text-black text-center mb-4 px-6">{#await $t('oracleGameText')}{:then translatedText}{translatedText}{/await}</p>
       <div class="relative w-full">
         <img src="/images/trinity-tarot-opener.jpg" alt="Trinity Tarot Opener" class="w-full h-64 object-cover rounded-lg" />
       </div>
       <button on:click={startGame} class="px-6 py-3 text-lg font-bold text-black bg-white border border-black rounded-lg shadow-lg hover:bg-gray-200 transition-transform transform hover:scale-105 mt-6">
-        {$t('start')}
+        {#await $t('start')}{:then translatedText}{translatedText}{/await}
       </button>
       <a href="/instructions" class="text-black hover:underline mt-4">
-        {$t('instructions')}
+        {#await $t('instructions')}{:then translatedText}{translatedText}{/await}
       </a>
       <div class="flex flex-col items-center mt-6">
         <img src="/images/logo-ugo-dossi-weiß-transparent-footer.png" alt="Ugo Dossi Logo" class="mb-2" />
@@ -97,7 +106,7 @@
       </div>
       {#if !showXY}
         <button on:click={calculateXY} class="px-6 py-3 text-lg font-bold text-black bg-white border border-black rounded-lg shadow-lg hover:bg-gray-200 transition-transform transform hover:scale-105">
-          {$t('calculateXY')}
+          {#await $t('calculateXY')}{:then translatedText}{translatedText}{/await}
         </button>
       {/if}
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 mt-4">
@@ -117,20 +126,15 @@
       </div>
       {#if showXY && !showZ}
         <button on:click={calculateZ} class="px-6 py-3 text-lg font-bold text-black bg-white border border-black rounded-lg shadow-lg hover:bg-gray-200 transition-transform transform hover:scale-105 mt-4">
-          {$t('calculateZ')}
+          {#await $t('calculateZ')}{:then translatedText}{translatedText}{/await}
         </button>
       {/if}
       {#if showZ && $cardZ}
         <CardComponent card={$cardZ} {currentLanguage} label="Z" onSelect={handleCardSelect} />
-        <button on:click={startGame} class="mt-4 px-6 py-2 text-black bg-white border border-black rounded-lg shadow-md hover:bg-gray-200 transition-transform transform hover:scale-105">
-          {$t('restart')}
-        </button>
+          <button on:click={restartGame} class="mt-4 px-6 py-2 text-black bg-white border border-black rounded-lg shadow-md hover:bg-gray-200 transition-transform transform hover:scale-105">
+            {#await $t('restart')}{:then translatedText}{translatedText}{/await}
+          </button>
       {/if}
-      <div class="flex flex-row gap-4">
-        <a href="/instructions" class="px-6 py-3 text-lg font-bold text-black bg-white border border-black rounded-lg shadow-lg hover:bg-gray-200 transition-transform transform hover:scale-105">
-          {$t('instructions')}
-        </a>
-      </div>
     </div>
   {/if}
 
@@ -138,3 +142,11 @@
     <PopUp card={selectedCard} {currentLanguage} onClose={closePopUp} />
   {/if}
 </div>
+
+<FooterBar 
+  onStartGame={startGame} 
+  onCalculateXY={calculateXY} 
+  onCalculateZ={calculateZ} 
+  onRestart={restartGame} 
+  {currentLanguage} 
+/>
