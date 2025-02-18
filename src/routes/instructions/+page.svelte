@@ -30,7 +30,7 @@
         <h1 class="text-2xl font-bold text-left mb-8 text-black">
             {$t('instAxialTitle').toUpperCase()}
         </h1>
-        <img src="/src/assets/reading-the-axial-cross-oracle.jpg" alt="Axial Cross Oracle" class="w-full max-w-2xl rounded-lg shadow-md mb-8">
+        <img src="/images/reading-the-axial-cross-oracle.jpg" alt="Axial Cross Oracle" class="w-full max-w-2xl rounded-lg shadow-md mb-8">
         <p class="text-base text-black text-left mb-8 px-6" style="white-space: pre-wrap">
             {@html $t('instAxialText')}
         </p>

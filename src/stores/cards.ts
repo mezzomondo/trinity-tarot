@@ -7,7 +7,7 @@ export const cards: Card[] = [
   {
     id: 1,
     name: { it: "Embrione", en: "Embryo" },
-    image: "/src/assets/trinity-tarot-card-01-embryo.jpg",
+    image: "/images/trinity-tarot-card-01-embryo.jpg",
     figurativeElement: {
       it: "Embrione, il non ancora nato e già vivo. L'uovo fecondato.",
       en: "Embryo, the still unborn and already living. The fertilised egg."
@@ -36,7 +36,7 @@ export const cards: Card[] = [
   {
     id: 2,
     name: { it: "Occhio", en: "Eye" },
-    image: "/src/assets/trinity-tarot-card-02-eye.jpg",
+    image: "/images/trinity-tarot-card-02-eye.jpg",
     figurativeElement: {
       it: "Occhio che vede, archeogramma per il risveglio e la percezione in ogni forma. Geroglifico VISTA e AZIONE.",
       en: "Seeing eye, archeogram for waking and perceiving in every form. Hieroglyph SIGHT and DOING."
@@ -65,7 +65,7 @@ export const cards: Card[] = [
   {
     id: 3,
     name: { it: "Passo", en: "Step" },
-    image: "/src/assets/trinity-tarot-card-03-step.jpg",
+    image: "/images/trinity-tarot-card-03-step.jpg",
     figurativeElement: {
       it: "Gambe che camminano, geroglifico per il movimento.",
       en: "Walking legs, hieroglyph for movement."
@@ -94,7 +94,7 @@ export const cards: Card[] = [
   {
     id: 4,
     name: { it: "Mano", en: "Hand" },
-    image: "/src/assets/trinity-tarot-card-04-hand.jpg",
+    image: "/images/trinity-tarot-card-04-hand.jpg",
     figurativeElement: {
       it: "Mano, il mondo delle azioni, attività.",
       en: "Hand, the world of actions, activities."
@@ -123,7 +123,7 @@ export const cards: Card[] = [
   {
     id: 5,
     name: { it: "Bocca", en: "Mouth" },
-    image: "/src/assets/trinity-tarot-card-05-mouth.jpg",
+    image: "/images/trinity-tarot-card-05-mouth.jpg",
     figurativeElement: {
       it: "Bocca.",
       en: "Mouth."
@@ -152,7 +152,7 @@ export const cards: Card[] = [
   {
     id: 6,
     name: { it: "Bacio", en: "Kiss" },
-    image: "/src/assets/trinity-tarot-card-06-kiss.jpg",
+    image: "/images/trinity-tarot-card-06-kiss.jpg",
     figurativeElement: {
       it: "Bacio.",
       en: "Kiss."
@@ -181,7 +181,7 @@ export const cards: Card[] = [
   {
     id: 7,
     name: { it: "Pantera", en: "Panther" },
-    image: "/src/assets/trinity-tarot-card-07-panther.jpg",
+    image: "/images/trinity-tarot-card-07-panther.jpg",
     figurativeElement: {
       it: "Pantera, archeogramma per l'indomito, elegante.",
       en: "Panther, archeogram for the untamed, sleek."
@@ -210,7 +210,7 @@ export const cards: Card[] = [
   {
     id: 8,
     name: { it: "Equilibrio", en: "Balance" },
-    image: "/src/assets/trinity-tarot-card-08-balance.jpg",
+    image: "/images/trinity-tarot-card-08-balance.jpg",
     figurativeElement: {
       it: "Ciclo, ascendente e discendente.",
       en: "Loop, ascending and descending."
@@ -239,8 +239,8 @@ export const cards: Card[] = [
   {
     id: 9,
     name: { it: "Riposo", en: "Rest" },
-    image: "/src/assets/trinity-tarot-card-09-rest.jpg",
-    alternateImage: "/src/assets/magic-square-3x3-1.jpg",
+    image: "/images/trinity-tarot-card-09-rest.jpg",
+    alternateImage: "/images/magic-square-3x3-1.jpg",
     figurativeElement: {
       it: "Figura che riposa.",
       en: "Resting figure."
@@ -269,7 +269,7 @@ export const cards: Card[] = [
   {
     id: 10,
     name: { it: "Chiave", en: "Key" },
-    image: "/src/assets/trinity-tarot-card-10-key.jpg",
+    image: "/images/trinity-tarot-card-10-key.jpg",
     figurativeElement: {
       it: "Chiave.",
       en: "Key."
@@ -298,7 +298,7 @@ export const cards: Card[] = [
   {
     id: 11,
     name: { it: "Forza", en: "Force" },
-    image: "/src/assets/trinity-tarot-card-11-force.jpg",
+    image: "/images/trinity-tarot-card-11-force.jpg",
     figurativeElement: {
       it: "Mani e braccia sollevate, geroglifico KA, forza vitale.",
       en: "Raised hands and arms, hieroglyph KA, life force."
@@ -327,7 +327,7 @@ export const cards: Card[] = [
   {
     id: 12,
     name: { it: "Rivoluzione", en: "Revolution" },
-    image: "/src/assets/trinity-tarot-card-12-revolution.jpg",
+    image: "/images/trinity-tarot-card-12-revolution.jpg",
     figurativeElement: {
       it: "Spirali contro-rotanti.",
       en: "Counter-rotating spirals."
@@ -356,7 +356,7 @@ export const cards: Card[] = [
   {
     id: 13,
     name: { it: "Sonno", en: "Sleep" },
-    image: "/src/assets/trinity-tarot-card-13-sleep.jpg",
+    image: "/images/trinity-tarot-card-13-sleep.jpg",
     figurativeElement: {
       it: "Volto addormentato.",
       en: "Sleeping face."
@@ -385,7 +385,7 @@ export const cards: Card[] = [
   {
     id: 14,
     name: { it: "Anima", en: "Soul" },
-    image: "/src/assets/trinity-tarot-card-14-soul.jpg",
+    image: "/images/trinity-tarot-card-14-soul.jpg",
     figurativeElement: {
       it: "Uccello con testa umana. Sirena nella mitologia greca, geroglifico BA, anima.",
       en: "Bird with human head. Siren in Greek mythology, hieroglyph BA, soul."
@@ -414,7 +414,7 @@ export const cards: Card[] = [
   {
     id: 15,
     name: { it: "Significato", en: "Meaning" },
-    image: "/src/assets/trinity-tarot-card-15-meaning.jpg",
+    image: "/images/trinity-tarot-card-15-meaning.jpg",
     figurativeElement: {
       it: "Mano con dito indice puntato.",
       en: "Hand with pointing index finger."
@@ -443,7 +443,7 @@ export const cards: Card[] = [
   {
     id: 16,
     name: { it: "Ancora", en: "Anchor" },
-    image: "/src/assets/trinity-tarot-card-16-anchor.jpg",
+    image: "/images/trinity-tarot-card-16-anchor.jpg",
     figurativeElement: {
       it: "Ancora.",
       en: "Anchor."
@@ -472,7 +472,7 @@ export const cards: Card[] = [
   {
     id: 17,
     name: { it: "Scale", en: "Stairs" },
-    image: "/src/assets/trinity-tarot-card-17-stairs.jpg",
+    image: "/images/trinity-tarot-card-17-stairs.jpg",
     figurativeElement: {
       it: "Scale.",
       en: "Stairs."
@@ -501,7 +501,7 @@ export const cards: Card[] = [
   {
     id: 18,
     name: { it: "Cobra", en: "Cobra" },
-    image: "/src/assets/trinity-tarot-card-18-cobra.jpg",
+    image: "/images/trinity-tarot-card-18-cobra.jpg",
     figurativeElement: {
       it: "Cobra eretto. Ureo, il cobra eretto, era l'elemento centrale sulla corona del faraone. Difende la conoscenza dietro la fronte del re.",
       en: "Upright cobra. Uraeus the erect cobra was the central element on the pharaoh‘s crown. It defends the knowledge behind the king‘s forehead."
@@ -530,7 +530,7 @@ export const cards: Card[] = [
   {
     id: 19,
     name: { it: "Sole", en: "Sun" },
-    image: "/src/assets/trinity-tarot-card-19-sun.jpg",
+    image: "/images/trinity-tarot-card-19-sun.jpg",
     figurativeElement: {
       it: "Ideogramma sole, oro, geroglifico non modificato.",
       en: "Ideogram sun, gold, unmodified hieroglyph."
@@ -559,7 +559,7 @@ export const cards: Card[] = [
   {
     id: 20,
     name: { it: "Stella", en: "Star" },
-    image: "/src/assets/trinity-tarot-card-20-star.jpg",
+    image: "/images/trinity-tarot-card-20-star.jpg",
     figurativeElement: {
       it: "Ideogramma stella e essere umano.",
       en: "Ideogram star and human being."
@@ -588,7 +588,7 @@ export const cards: Card[] = [
   {
     id: 21,
     name: { it: "Trinità", en: "Trinity" },
-    image: "/src/assets/trinity-tarot-card-21-trinity.jpg",
+    image: "/images/trinity-tarot-card-21-trinity.jpg",
     figurativeElement: {
       it: "3 elementi formano un'unità fluendo l'uno nell'altro. Inversione continua. Figura senza esterno e interno. Un cuore si forma da un altro, formando il primo.",
       en: "3 elements form a unit by flowing into one another. Continuous inversion. Figure without outside and inside. One heart shape emerges from another, forming the first."
@@ -617,7 +617,7 @@ export const cards: Card[] = [
   {
     id: 22,
     name: { it: "Scarabeo", en: "Beetle" },
-    image: "/src/assets/trinity-tarot-card-22-beetle.jpg",
+    image: "/images/trinity-tarot-card-22-beetle.jpg",
     figurativeElement: {
       it: "Scarabeo.",
       en: "Beetle, Scarab."
@@ -646,7 +646,7 @@ export const cards: Card[] = [
   {
     id: 23,
     name: { it: "Onda", en: "Wave" },
-    image: "/src/assets/trinity-tarot-card-23-wave.jpg",
+    image: "/images/trinity-tarot-card-23-wave.jpg",
     figurativeElement: {
       it: "Onda, oscillazione.",
       en: "Wave, oscillation."
@@ -675,7 +675,7 @@ export const cards: Card[] = [
   {
     id: 24,
     name: { it: "Piedi in preghiera", en: "Praying Feet" },
-    image: "/src/assets/trinity-tarot-card-24-praying-feet.jpg",
+    image: "/images/trinity-tarot-card-24-praying-feet.jpg",
     figurativeElement: {
       it: "'Piedi' che si toccano come in una postura di preghiera, collegati da una linea paradossale.",
       en: "‘Feet’ touching each other as if in a praying posture, connected by a paradoxical line."
@@ -704,8 +704,8 @@ export const cards: Card[] = [
   {
     id: 25,
     name: { it: "Evoluzione", en: "Evolution" },
-    image: "/src/assets/trinity-tarot-card-25-evolution.jpg",
-    alternateImage: "/src/assets/magic-square-5x5-1.jpg",
+    image: "/images/trinity-tarot-card-25-evolution.jpg",
+    alternateImage: "/images/magic-square-5x5-1.jpg",
     figurativeElement: {
       it: "Spirale che sale dalla superficie. Sforzo verso l'alto.",
       en: "Spiral rising from the surface. Striving upwards."
@@ -734,7 +734,7 @@ export const cards: Card[] = [
   {
     id: 26,
     name: { it: "Horus", en: "Horus" },
-    image: "/src/assets/trinity-tarot-card-26-horus.jpg",
+    image: "/images/trinity-tarot-card-26-horus.jpg",
     figurativeElement: {
       it: "Falco. Lo sguardo di Horus.",
       en: "Falcon. The gaze of Horus."
@@ -763,7 +763,7 @@ export const cards: Card[] = [
   {
     id: 27,
     name: { it: "Libertà", en: "Freedom" },
-    image: "/src/assets/trinity-tarot-card-27-freedom.jpg",
+    image: "/images/trinity-tarot-card-27-freedom.jpg",
     figurativeElement: {
       it: "Figura volante.",
       en: "Flying figure."
@@ -792,8 +792,8 @@ export const cards: Card[] = [
   {
     id: 28,
     name: { it: "Vita", en: "Life" },
-    image: "/src/assets/trinity-tarot-card-28-life.jpg",
-    alternateImage: "/src/assets/venus-symbol.jpg",
+    image: "/images/trinity-tarot-card-28-life.jpg",
+    alternateImage: "/images/venus-symbol.jpg",
     figurativeElement: {
       it: "Ankh, geroglifico per la vita.",
       en: "Ankh, hieroglyph for life."

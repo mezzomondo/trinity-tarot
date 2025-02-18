@@ -71,7 +71,7 @@
       <h1 class="text-2xl font-bold text-black mb-2 text-center">{$t('oracleGameSubTitle').toUpperCase()}</h1>
       <p class="text-base text-black text-center mb-4 px-6">{$t('oracleGameText')}</p>
       <div class="relative w-full">
-        <img src="/src/assets/trinity-tarot-opener.jpg" alt="Trinity Tarot Opener" class="w-full h-64 object-cover rounded-lg" />
+        <img src="/images/trinity-tarot-opener.jpg" alt="Trinity Tarot Opener" class="w-full h-64 object-cover rounded-lg" />
       </div>
       <button on:click={startGame} class="px-6 py-3 text-lg font-bold text-black bg-white border border-black rounded-lg shadow-lg hover:bg-gray-200 transition-transform transform hover:scale-105 mt-6">
         {$t('start')}
@@ -80,7 +80,7 @@
         {$t('instructions')}
       </a>
       <div class="flex flex-col items-center mt-6">
-        <img src="/src/assets/logo-ugo-dossi-weiß-transparent-footer.png" alt="Ugo Dossi Logo" class="mb-2" />
+        <img src="/images/logo-ugo-dossi-weiß-transparent-footer.png" alt="Ugo Dossi Logo" class="mb-2" />
         <p class="text-sm text-gray-600">© 2021 UGO DOSSI</p>
         <p class="text-sm text-gray-600">UGODOSSI@UGODOSSI.COM</p>
         <a href="https://ugodossi.com/trinity-tarot/" class="text-sm text-black hover:underline">ugodossi.com/trinity-tarot</a>
