@@ -3,9 +3,9 @@
     import { locale, t } from 'svelte-i18n';
     import { get } from 'svelte/store';
     export let card: Card;
+    export let currentLanguage: 'it' | 'en' = get(locale) as 'it' | 'en';
     export let onClose: () => void;
 
-    let currentLanguage: 'it' | 'en' = get(locale) as 'it' | 'en';
     locale.subscribe((value) => { currentLanguage = value as 'it' | 'en'; });
   </script>
   
