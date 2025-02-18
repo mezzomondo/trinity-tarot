@@ -7,10 +7,12 @@
   import { locale, t } from 'svelte-i18n';
   import LanguageSwitcher from '../components/LanguageSwitcher.svelte';
   import FooterBar from '../components/FooterBar.svelte';
+  import InstructionsPopUp from '../components/InstructionsPopUp.svelte';
 
   const selectedCards = writable<Card[]>([]);
   let currentLanguage: 'it' | 'en' = get(locale) as 'it' | 'en';
   let selectedCard: Card | null = null;
+  let showInstructions = writable(false);
   locale.subscribe((value) => { currentLanguage = value as 'it' | 'en'; });
 
   let showCards = false;
@@ -38,6 +40,14 @@
     showZ = false;
     selectedCards.set([]);
     selectedCard = null;
+  }
+
+  function openInstructions() {
+    showInstructions.set(true);
+  }
+
+  function closeInstructions() {
+    showInstructions.set(false);
   }
 
   const cardX = derived(selectedCards, ($selectedCards) => {
@@ -85,9 +95,9 @@
       <button on:click={startGame} class="px-6 py-3 text-lg font-bold text-black bg-white border border-black rounded-lg shadow-lg hover:bg-gray-200 transition-transform transform hover:scale-105 mt-6">
         {#await $t('start')}{:then translatedText}{translatedText}{/await}
       </button>
-      <a href="/instructions" class="text-black hover:underline mt-4">
+      <button on:click={openInstructions} class="mt-4 text-black hover:underline">
         {#await $t('instructions')}{:then translatedText}{translatedText}{/await}
-      </a>
+      </button>
       <div class="flex flex-col items-center mt-6">
         <img src="/images/logo-ugo-dossi-weiß-transparent-footer.png" alt="Ugo Dossi Logo" class="mb-2" />
         <p class="text-sm text-gray-600">© 2021 UGO DOSSI</p>
@@ -140,6 +150,10 @@
 
   {#if selectedCard}
     <PopUp card={selectedCard} {currentLanguage} onClose={closePopUp} />
+  {/if}
+
+  {#if $showInstructions}
+  <InstructionsPopUp onClose={closeInstructions} />
   {/if}
 </div>
 
