@@ -9,6 +9,7 @@ export default defineConfig({
 		// other server configurations...
 		allowedHosts: [
 		  'krill-moving-lemur.ngrok-free.app', // Add your ngrok host here
+		  'trinity-tarot.vercel.app'
 		  // you can add other hosts if needed
 		],
 	},
