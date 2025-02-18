@@ -26,6 +26,14 @@
     showZ = false;
   }
 
+  function nextStep() {
+    if (!showXY) {
+      calculateXY();
+    } else if (!showZ) {
+      calculateZ();
+    }
+  }
+  
   function calculateXY() {
     showXY = true;
   }
@@ -80,7 +88,7 @@
   }
 </script>
 
-<div class="flex flex-col items-center justify-start min-h-screen bg-gray-100 p-4 pt-10" style="font-family: 'Open Sans', Helvetica, Arial, sans-serif;">
+<div class="flex flex-col items-center justify-start min-h-screen bg-gray-100 p-4 pt-10 pb-24" style="font-family: 'Open Sans', Helvetica, Arial, sans-serif;">
   <div class="absolute top-4 right-4">
     <LanguageSwitcher />
   </div> 
@@ -159,6 +167,7 @@
 
 <FooterBar 
   onStartGame={startGame} 
+  onNextStep={nextStep}
   onCalculateXY={calculateXY} 
   onCalculateZ={calculateZ} 
   onRestart={restartGame} 

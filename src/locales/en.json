@@ -1,5 +1,6 @@
 {
     "start": "Start",
+    "next": "Next",
     "close": "Close",
     "calculateXY": "Calculate X and Y",
     "calculateZ": "Calculate Z",
