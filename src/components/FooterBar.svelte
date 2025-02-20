@@ -1,6 +1,7 @@
 <script lang="ts">
     import { t } from 'svelte-i18n';
     import { writable } from 'svelte/store';
+    import { tick } from 'svelte';
   
     export let onStartGame: () => void;
     export let onNextStep: () => void;
@@ -11,7 +12,12 @@
     // State to determine the current step
     const currentStep = writable(0);
   
-    function handleClick() {
+    let isProcessing = false;
+
+    async function handleClick() {
+      if (isProcessing) return;
+      isProcessing = true;
+      
       if (isLastStep) {
         onRestart();         // ✅ Quando è l'ultimo step, chiama restart
         currentStep.set(0);  // ✅ Reset dello step
@@ -22,6 +28,8 @@
         onNextStep();        // ✅ Passa allo step successivo
         currentStep.update(n => n + 1);
       }
+      await tick();
+      isProcessing = false;
     }
   </script>
   
