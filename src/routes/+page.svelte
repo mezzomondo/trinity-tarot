@@ -95,7 +95,7 @@
   }
 
   function restartGame() {
-    transition(state, 'RESTART');
+    transition(state, 'RESET');
   }
 
   function handleCardSelect(card: Card) {
@@ -192,5 +192,7 @@
 <FooterBar 
   onStartGame={startGame}
   onNextStep={nextStep}
+  onRestart={restartGame}
   onShowInstructions={openInstructionsModal}
+  isLastStep={state.current === 'CardZ'}
 />
