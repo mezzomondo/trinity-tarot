@@ -11,29 +11,43 @@
 
     // State to determine the current step
     const currentStep = writable(0);
-  
+    let eventQueue: (() => void)[] = [];
     let isProcessing = false;
 
-    async function handleClick() {
+    async function processQueue() {
       if (isProcessing) return;
       isProcessing = true;
-      
-      if (isLastStep) {
-        onRestart();         // ✅ Quando è l'ultimo step, chiama restart
-        currentStep.set(0);  // ✅ Reset dello step
-        isProcessing = false;
-        await tick();
-      } else if ($currentStep === 0) {
-        onStartGame();       // ✅ Prima volta: Inizia
-        currentStep.update(n => n + 1);
-        await tick();
-        isProcessing = false;
-      } else {
-        onNextStep();        // ✅ Passa allo step successivo
-        currentStep.update(n => n + 1);
-        await tick();
-        isProcessing = false;
+
+      while (eventQueue.length > 0) {
+          const action = eventQueue.shift(); // ✅ Prende il primo evento in coda
+          if (action) {
+              action();
+              await tick(); // ✅ Attende il rendering per ogni evento
+          }
       }
+
+      isProcessing = false;
+    }
+
+    function handleClick() {
+        eventQueue.push(() => {
+            if (isLastStep) {
+                console.log('🚀 Restart chiamato');
+                onRestart();
+                currentStep.set(0);
+            } else if ($currentStep === 0) {
+                console.log('🔥 Inizio gioco');
+                onStartGame();
+                currentStep.update(n => n + 1);
+            } else {
+                console.log('➡️ Prossimo step');
+                onNextStep();
+                currentStep.update(n => n + 1);
+            }
+            console.log('✅ Rendering completato');
+        });
+
+        processQueue(); // ✅ Processa la coda
     }
   </script>
   
