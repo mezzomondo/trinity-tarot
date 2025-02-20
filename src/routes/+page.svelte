@@ -1,14 +1,15 @@
 <script lang="ts">
   import { writable, get } from 'svelte/store';
   import { transition, type State, configureOptions } from '../stores/state';
+  import Modal from '../components/Modal.svelte';
+  import CardModal from '../components/CardModal.svelte';
+  import InstructionsModal from '../components/InstructionsModal.svelte';
   import { cards } from '../stores/cards';
   import type { Card } from '../types';
   import CardComponent from '../components/Card.svelte';
-  import PopUp from '../components/PopUp.svelte';
   import { locale, t } from 'svelte-i18n';
   import LanguageSwitcher from '../components/LanguageSwitcher.svelte';
   import FooterBar from '../components/FooterBar.svelte';
-  import InstructionsPopUp from '../components/InstructionsPopUp.svelte';
 
   let state: State = $state({
     current: 'Initial',
@@ -28,11 +29,31 @@
       selectedCard: null
     }
   });
+
   let showInstructions = writable(false);
   let currentLanguage: 'it' | 'en' = get(locale) as 'it' | 'en';
   const cardSequence = ['a', 'b', 'x', 'c', 'd', 'y', 'z']; // Sequenza delle carte
   const cardOrder = cardSequence.map(key => ({ key, label: key.toUpperCase() }));
-  
+  let isCardModalOpen = writable(false);
+  let isInstructionsModalOpen = writable(false);
+
+  function openCardModal(card: Card) {
+    state.ui.selectedCard = card;
+    isCardModalOpen.set(true);
+  }
+
+  function closeCardModal() {
+    state.ui.selectedCard = null;
+    isCardModalOpen.set(false);
+  }
+
+  function openInstructionsModal() {
+    isInstructionsModalOpen.set(true);
+  }
+
+  function closeInstructionsModal() {
+    isInstructionsModalOpen.set(false);
+  }
 
   function populateStateWithRandomNumbers() {
     const getUniqueRandomIndexes = (count: number, max: number): number[] => {
@@ -77,10 +98,6 @@
     transition(state, 'RESTART');
   }
 
-  function openInstructions() {
-    showInstructions.set(true);
-  }
-
   function handleCardSelect(card: Card) {
     state.ui.selectedCard = card;
   }
@@ -117,7 +134,7 @@
 
 </script>
 
-<div class="flex flex-col items-center justify-start min-h-screen bg-gray-200 w-screen overflow-hidden p-4 pt-10 pb-24" style="font-family: 'Open Sans', Helvetica, Arial, sans-serif;">
+<div class={`flex flex-col items-center justify-start min-h-screen bg-gray-200 w-screen overflow-hidden p-4 pt-10 pb-24 ${state.ui.selectedCard ? 'pointer-events-none blur-sm' : ''}`} style="font-family: 'Open Sans', Helvetica, Arial, sans-serif;">
   <div class="absolute top-4 right-4">
     <LanguageSwitcher />
   </div>
@@ -145,13 +162,13 @@
         <div class="grid grid-cols-3 gap-4 justify-center min-w-0 overflow-x-auto">
           {#each row as key, index}
             {#if state.data[key as keyof typeof state.data]}
-              <div class="shrink-0"> <!-- Previene la compressione delle carte -->
+              <div class="shrink-0">
                 <CardComponent 
                   card={state.data[key as keyof typeof state.data]!} 
                   {currentLanguage} 
                   label={key.toUpperCase()} 
-                  onSelect={handleCardSelect}
-                  on:click={() => openPopUp(state.data[key as keyof typeof state.data]!)}
+                  onClick={(card) => {openCardModal(card);}
+                }
                 />
               </div>
             {/if}
@@ -162,12 +179,18 @@
   {/if}
 </div>
 
-{#if state.ui.selectedCard}
-  <PopUp card={state.ui.selectedCard} {currentLanguage} onClose={closePopUp} />
-{/if}
+<Modal isOpen={$isCardModalOpen} onClose={closeCardModal}>
+  {#if state.ui.selectedCard}
+    <CardModal card={state.ui.selectedCard} />
+  {/if}
+</Modal>
+
+<Modal isOpen={$isInstructionsModalOpen} onClose={closeInstructionsModal}>
+  <InstructionsModal />
+</Modal>
 
 <FooterBar 
-  onStartGame={startGame} 
+  onStartGame={startGame}
   onNextStep={nextStep}
-  onShowInstructions={openInstructions}
+  onShowInstructions={openInstructionsModal}
 />

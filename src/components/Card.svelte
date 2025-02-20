@@ -4,10 +4,10 @@
     export let card: Card;
     export let label: string;
     export let currentLanguage: 'it' | 'en';
-    export let onSelect: (card: Card) => void;
+    export let onClick: (card: Card) => void;
   
     function handleClick() {
-      onSelect(card);
+      onClick(card);
     }
   
     function handleKeyDown(event: KeyboardEvent) {
