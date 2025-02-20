@@ -16,6 +16,7 @@
         onNextStep();
       }
       currentStep.update(n => n + 1);
+      console.log(currentStep)
     }
   </script>
   

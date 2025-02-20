@@ -1,5 +1,6 @@
 <script lang="ts">
-  import { writable, derived, get } from 'svelte/store';
+  import { writable, get } from 'svelte/store';
+  import { transition, type State, configureOptions } from '../stores/state';
   import { cards } from '../stores/cards';
   import type { Card } from '../types';
   import CardComponent from '../components/Card.svelte';
@@ -9,94 +10,115 @@
   import FooterBar from '../components/FooterBar.svelte';
   import InstructionsPopUp from '../components/InstructionsPopUp.svelte';
 
-  const selectedCards = writable<Card[]>([]);
+  let state: State = $state({
+        current: 'Initial',
+        config: {
+            enableExplanations: false
+        },
+        data: {
+            a: null as Card | null,
+            b: null as Card | null,
+            x: null as Card | null,
+            c: null as Card | null,
+            d: null as Card | null,
+            y: null as Card | null,
+            z: null as Card | null
+        }
+    });
+  let showInstructions = writable(false);
   let currentLanguage: 'it' | 'en' = get(locale) as 'it' | 'en';
   let selectedCard: Card | null = null;
-  let showInstructions = writable(false);
-  locale.subscribe((value) => { currentLanguage = value as 'it' | 'en'; });
+  const cardSequence = ['a', 'b', 'x', 'c', 'd', 'y', 'z']; // Sequenza delle carte
+  const cardOrder = cardSequence.map(key => ({ key, label: key.toUpperCase() }));
 
-  let showCards = false;
-  let showXY = false;
-  let showZ = false;
+  function populateStateWithRandomNumbers() {
+    const getUniqueRandomIndexes = (count: number, max: number): number[] => {
+        const numbers = new Set<number>();
+        while (numbers.size < count) {
+            numbers.add(Math.floor(Math.random() * max) + 1);
+        }
+        return Array.from(numbers);
+    };
+
+    const randomIndexes = getUniqueRandomIndexes(4, 28);
+    const selectedCards = randomIndexes.map(index => cards[index]);
+    const x = cards[(randomIndexes[0] + randomIndexes[1]) % 28 || 28];
+    const y = cards[(randomIndexes[2] + randomIndexes[3]) % 28 || 28];
+    const z = cards[(x.id + y.id) % 28 || 28];
+
+    // ✅ Assegna l'intero oggetto per attivare la reattività
+    state = {
+        ...state,
+        data: {
+            a: selectedCards[0],
+            b: selectedCards[1],
+            c: selectedCards[2],
+            d: selectedCards[3],
+            x,
+            y,
+            z
+        }
+    };
+  }
 
   function startGame() {
-    selectedCards.set([...cards.sort(() => 0.5 - Math.random()).slice(0, 4)] as Card[]);
-    showCards = true;
-    showXY = false;
-    showZ = false;
+    populateStateWithRandomNumbers();
+    transition(state, 'START')
   }
 
   function nextStep() {
-    if (!showXY) {
-      calculateXY();
-    } else if (!showZ) {
-      calculateZ();
-    }
-  }
-
-  function calculateXY() {
-    showXY = true;
-  }
-
-  function calculateZ() {
-    showZ = true;
+    transition(state, 'NEXT');
   }
 
   function restartGame() {
-    showCards = false;
-    showXY = false;
-    showZ = false;
-    selectedCards.set([]);
-    selectedCard = null;
+    transition(state, 'RESTART');
   }
 
   function openInstructions() {
     showInstructions.set(true);
   }
 
-  function closeInstructions() {
-    showInstructions.set(false);
-  }
-
-  const cardX = derived(selectedCards, ($selectedCards) => {
-    if ($selectedCards.length >= 2) {
-      return cards.find(c => c.id === (($selectedCards[0].id + $selectedCards[1].id) % 28 || 28)) || null;
-    }
-    return null;
-  }, null);
-
-  const cardY = derived(selectedCards, ($selectedCards) => {
-    if ($selectedCards.length >= 4) {
-      return cards.find(c => c.id === (($selectedCards[2].id + $selectedCards[3].id) % 28 || 28)) || null;
-    }
-    return null;
-  }, null);
-
-  const cardZ = derived([cardX, cardY], ([$cardX, $cardY]) => {
-    if ($cardX && $cardY) {
-      return cards.find(c => c.id === (($cardX.id + $cardY.id) % 28 || 28)) || null;
-    }
-    return null;
-  }, null);
-
   function handleCardSelect(card: Card) {
     selectedCard = card;
   }
 
-  function closePopUp() {
-    selectedCard = null;
+  const layout = [
+        ['a', 'b', 'x'],
+        ['c', 'd', 'y'],
+        ['z']
+  ];
+
+  function getVisibleCardsCount() {
+      const current: string = state.current.replace('Card', '').toLowerCase();
+      const flatLayout = layout.flat();
+      const index = flatLayout.indexOf(current);
+      return index === -1 ? 0 : index + 1;
   }
+
+  function getVisibleCardsPerRow() {
+      const visibleCount = getVisibleCardsCount();
+      const flatLayout = layout.flat();
+      
+      return layout.map(row => 
+          row.filter(item => flatLayout.indexOf(item) < visibleCount)
+      );
+  }
+
+  function isLastCard(index: number, rowIndex: number): boolean {
+        return index + rowIndex * 3 === getVisibleCardsCount() - 1;
+    }
+
 </script>
 
-<div class="flex flex-col items-center justify-start min-h-screen bg-gray-100 p-4 pt-10 pb-24" style="font-family: 'Open Sans', Helvetica, Arial, sans-serif;">
+<div class="flex flex-col items-center justify-start min-h-screen bg-gray-200 w-screen overflow-hidden p-4 pt-10 pb-24" style="font-family: 'Open Sans', Helvetica, Arial, sans-serif;">
   <div class="absolute top-4 right-4">
     <LanguageSwitcher />
-  </div> 
-  {#if !showCards}
+  </div>
+  {#if state.current == 'Initial'}
     <div class="relative bg-gray-200 p-6 rounded-lg shadow-md flex flex-col items-center w-full max-w-4xl">
-      <h1 class="text-2xl font-bold text-black mb-2">{#await $t('oracleGameTitle')}{:then translatedText}{translatedText.toUpperCase()}{/await}</h1>
-      <h1 class="text-2xl font-bold text-black mb-2">{#await $t('oracleGameSubTitle')}{:then translatedText}{translatedText.toUpperCase()}{/await}</h1>
-      <p class="text-base text-black text-center mb-4 px-6">{#await $t('oracleGameText')}{:then translatedText}{translatedText}{/await}</p>
+      <h1 class="text-2xl font-bold text-black mb-2 text-center">{#await $t('oracleGameTitle')}{:then translatedText}{translatedText.toUpperCase()}{/await}</h1>
+      <h1 class="text-2xl font-bold text-black mb-2 text-center">{#await $t('oracleGameSubTitle')}{:then translatedText}{translatedText.toUpperCase()}{/await}</h1>
+      <p class="text-base text-black text-left mb-4 px-6">{#await $t('oracleGameText')}{:then translatedText}{translatedText}{/await}</p>
       <div class="relative w-full">
         <img src="/images/trinity-tarot-opener.jpg" alt="Trinity Tarot Opener" class="w-full h-64 object-cover rounded-lg" />
       </div>
@@ -108,57 +130,26 @@
       </div>
     </div>
   {/if}
-
-  {#if showCards}
-    <div class="flex flex-col items-center gap-6 w-full">
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {#each $selectedCards as card, index}
-          <CardComponent {card} {currentLanguage} label={index === 0 ? 'A' : index === 1 ? 'B' : index === 2 ? 'C' : 'D'} onSelect={handleCardSelect} />
+  {#if state.current !== 'Initial'}
+  <div class="flex flex-col items-center gap-4 w-full">
+    {#each getVisibleCardsPerRow() as row, rowIndex}
+    <div class="grid grid-cols-3 gap-4 justify-center min-w-0">
+        {#each row as key, index}
+            {#if state.data[key as keyof typeof state.data]}
+                <CardComponent 
+                    card={state.data[key as keyof typeof state.data]!} 
+                    {currentLanguage} 
+                    label={key.toUpperCase()} 
+                    onSelect={handleCardSelect}
+                />
+            {/if}
         {/each}
-      </div>
-      {#if !showXY}
-        <button on:click={calculateXY} class="px-6 py-3 text-lg font-bold text-black bg-white border border-black rounded-lg shadow-lg hover:bg-gray-200 transition-transform transform hover:scale-105">
-          {#await $t('calculateXY')}{:then translatedText}{translatedText}{/await}
-        </button>
-      {/if}
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 mt-4">
-        <div class="hidden lg:block"></div>
-        {#if showXY && $cardX}
-          <div class="flex justify-center">
-            <CardComponent card={$cardX} {currentLanguage} label="X" onSelect={handleCardSelect} />
-          </div>
-        {/if}
-        <div class="hidden lg:block"></div>
-        {#if showXY && $cardY}
-          <div class="flex justify-center">
-            <CardComponent card={$cardY} {currentLanguage} label="Y" onSelect={handleCardSelect} />
-          </div>
-        {/if}
-        <div class="hidden lg:block"></div>
-      </div>
-      {#if showXY && !showZ}
-        <button on:click={calculateZ} class="px-6 py-3 text-lg font-bold text-black bg-white border border-black rounded-lg shadow-lg hover:bg-gray-200 transition-transform transform hover:scale-105 mt-4">
-          {#await $t('calculateZ')}{:then translatedText}{translatedText}{/await}
-        </button>
-      {/if}
-      {#if showZ && $cardZ}
-        <CardComponent card={$cardZ} {currentLanguage} label="Z" onSelect={handleCardSelect} />
-          <button on:click={restartGame} class="mt-4 px-6 py-2 text-black bg-white border border-black rounded-lg shadow-md hover:bg-gray-200 transition-transform transform hover:scale-105">
-            {#await $t('restart')}{:then translatedText}{translatedText}{/await}
-          </button>
-      {/if}
     </div>
+    {/each}
+  </div>
   {/if}
 
-  {#if selectedCard}
-    <PopUp card={selectedCard} {currentLanguage} onClose={closePopUp} />
-  {/if}
-
-  {#if $showInstructions}
-  <InstructionsPopUp onClose={closeInstructions} />
-  {/if}
 </div>
-
 <FooterBar 
   onStartGame={startGame} 
   onNextStep={nextStep}
