@@ -1,13 +1,13 @@
 <script lang="ts">
   import { writable, get } from 'svelte/store';
+  import { locale, t } from 'svelte-i18n';
+  import type { Card } from '../types';
+  import { cards } from '../stores/cards';
   import { transition, type State, configureOptions } from '../stores/state';
   import Modal from '../components/Modal.svelte';
   import CardModal from '../components/CardModal.svelte';
   import InstructionsModal from '../components/InstructionsModal.svelte';
-  import { cards } from '../stores/cards';
-  import type { Card } from '../types';
   import CardComponent from '../components/Card.svelte';
-  import { locale, t } from 'svelte-i18n';
   import LanguageSwitcher from '../components/LanguageSwitcher.svelte';
   import FooterBar from '../components/FooterBar.svelte';
 
