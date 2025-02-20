@@ -21,15 +21,19 @@
       if (isLastStep) {
         onRestart();         // ✅ Quando è l'ultimo step, chiama restart
         currentStep.set(0);  // ✅ Reset dello step
+        isProcessing = false;
+        await tick();
       } else if ($currentStep === 0) {
         onStartGame();       // ✅ Prima volta: Inizia
         currentStep.update(n => n + 1);
+        await tick();
+        isProcessing = false;
       } else {
         onNextStep();        // ✅ Passa allo step successivo
         currentStep.update(n => n + 1);
+        await tick();
+        isProcessing = false;
       }
-      await tick();
-      isProcessing = false;
     }
   </script>
   
