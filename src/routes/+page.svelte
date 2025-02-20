@@ -11,33 +11,36 @@
   import InstructionsPopUp from '../components/InstructionsPopUp.svelte';
 
   let state: State = $state({
-        current: 'Initial',
-        config: {
-            enableExplanations: false
-        },
-        data: {
-            a: null as Card | null,
-            b: null as Card | null,
-            x: null as Card | null,
-            c: null as Card | null,
-            d: null as Card | null,
-            y: null as Card | null,
-            z: null as Card | null
-        }
-    });
+    current: 'Initial',
+    config: {
+        enableExplanations: false
+    },
+    data: {
+        a: null as Card | null,
+        b: null as Card | null,
+        x: null as Card | null,
+        c: null as Card | null,
+        d: null as Card | null,
+        y: null as Card | null,
+        z: null as Card | null
+    },
+    ui: {
+      selectedCard: null
+    }
+  });
   let showInstructions = writable(false);
   let currentLanguage: 'it' | 'en' = get(locale) as 'it' | 'en';
-  let selectedCard: Card | null = null;
   const cardSequence = ['a', 'b', 'x', 'c', 'd', 'y', 'z']; // Sequenza delle carte
   const cardOrder = cardSequence.map(key => ({ key, label: key.toUpperCase() }));
+  
 
   function populateStateWithRandomNumbers() {
     const getUniqueRandomIndexes = (count: number, max: number): number[] => {
-        const numbers = new Set<number>();
-        while (numbers.size < count) {
-            numbers.add(Math.floor(Math.random() * max) + 1);
-        }
-        return Array.from(numbers);
+      const numbers = new Set<number>();
+      while (numbers.size < count) {
+          numbers.add(Math.floor(Math.random() * max) + 1);
+      }
+      return Array.from(numbers);
     };
 
     const randomIndexes = getUniqueRandomIndexes(4, 28);
@@ -48,16 +51,16 @@
 
     // ✅ Assegna l'intero oggetto per attivare la reattività
     state = {
-        ...state,
-        data: {
-            a: selectedCards[0],
-            b: selectedCards[1],
-            c: selectedCards[2],
-            d: selectedCards[3],
-            x,
-            y,
-            z
-        }
+      ...state,
+      data: {
+          a: selectedCards[0],
+          b: selectedCards[1],
+          c: selectedCards[2],
+          d: selectedCards[3],
+          x,
+          y,
+          z
+      }
     };
   }
 
@@ -79,7 +82,7 @@
   }
 
   function handleCardSelect(card: Card) {
-    selectedCard = card;
+    state.ui.selectedCard = card;
   }
 
   const layout = [
@@ -104,9 +107,13 @@
       );
   }
 
-  function isLastCard(index: number, rowIndex: number): boolean {
-        return index + rowIndex * 3 === getVisibleCardsCount() - 1;
-    }
+  function openPopUp(card: Card) {
+    state.ui.selectedCard = card;
+  }
+
+  function closePopUp() {
+    state.ui.selectedCard = null;
+  }
 
 </script>
 
@@ -114,6 +121,7 @@
   <div class="absolute top-4 right-4">
     <LanguageSwitcher />
   </div>
+
   {#if state.current == 'Initial'}
     <div class="relative bg-gray-200 p-6 rounded-lg shadow-md flex flex-col items-center w-full max-w-4xl">
       <h1 class="text-2xl font-bold text-black mb-2 text-center">{#await $t('oracleGameTitle')}{:then translatedText}{translatedText.toUpperCase()}{/await}</h1>
@@ -130,26 +138,34 @@
       </div>
     </div>
   {/if}
-  {#if state.current !== 'Initial'}
-  <div class="flex flex-col items-center gap-4 w-full">
-    {#each getVisibleCardsPerRow() as row, rowIndex}
-    <div class="grid grid-cols-3 gap-4 justify-center min-w-0">
-        {#each row as key, index}
-            {#if state.data[key as keyof typeof state.data]}
-                <CardComponent 
-                    card={state.data[key as keyof typeof state.data]!} 
-                    {currentLanguage} 
-                    label={key.toUpperCase()} 
-                    onSelect={handleCardSelect}
-                />
-            {/if}
-        {/each}
-    </div>
-    {/each}
-  </div>
-  {/if}
 
+  {#if state.current !== 'Initial'}
+    <div class="flex flex-col items-center gap-4 w-full overflow-x-auto whitespace-nowrap max-w-full">
+      {#each getVisibleCardsPerRow() as row, rowIndex}
+        <div class="grid grid-cols-3 gap-4 justify-center min-w-0 overflow-x-auto">
+          {#each row as key, index}
+            {#if state.data[key as keyof typeof state.data]}
+              <div class="shrink-0"> <!-- Previene la compressione delle carte -->
+                <CardComponent 
+                  card={state.data[key as keyof typeof state.data]!} 
+                  {currentLanguage} 
+                  label={key.toUpperCase()} 
+                  onSelect={handleCardSelect}
+                  on:click={() => openPopUp(state.data[key as keyof typeof state.data]!)}
+                />
+              </div>
+            {/if}
+          {/each}
+        </div>
+      {/each}
+    </div>
+  {/if}
 </div>
+
+{#if state.ui.selectedCard}
+  <PopUp card={state.ui.selectedCard} {currentLanguage} onClose={closePopUp} />
+{/if}
+
 <FooterBar 
   onStartGame={startGame} 
   onNextStep={nextStep}

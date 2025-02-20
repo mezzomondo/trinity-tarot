@@ -26,14 +26,28 @@
     }
   </script>
   
-  <button on:click={handleClick} on:keydown={handleKeyDown} class="flex flex-col items-center border border-gray-300 p-4 rounded-lg shadow bg-white w-72 h-96 cursor-pointer" style="font-family: 'Open Sans', Helvetica, Arial, sans-serif;">
-    <p class="font-bold text-lg">{label}</p>
-    <img src={card.image} alt={card.name[currentLanguage]} class="w-full h-48 object-contain rounded-md" />
-    <p class="text-sm font-bold mt-2">#{card.id} - {card.name[currentLanguage]}</p>
+  <button 
+    on:click={handleClick} 
+    on:keydown={handleKeyDown} 
+    class="flex flex-col items-center border border-gray-300 p-4 rounded-lg shadow bg-white w-72 h-96 cursor-pointer overflow-hidden whitespace-normal break-words"
+    style="font-family: 'Open Sans', Helvetica, Arial, sans-serif;"
+  >
+  <p class="font-bold text-lg overflow-hidden text-ellipsis">{label}</p>
+  
+  <img 
+    src={card.image} 
+    alt={card.name[currentLanguage]} 
+    class="w-full h-48 object-contain rounded-md"
+  />
+  
+  <div class="flex-grow overflow-hidden text-center mt-2">
+    <p class="text-sm font-bold break-words overflow-hidden text-ellipsis">#{card.id} - {card.name[currentLanguage]}</p>
+    
     {#if label === 'Z'}
-      <p class="text-sm mt-1" style="color: rgb(205, 22, 25); font-size: 1rem;"><strong>{card.oracle[currentLanguage]}</strong></p>
+      <p class="text-sm mt-1 break-words text-red-600 font-bold">{card.oracle[currentLanguage]}</p>
     {:else}
-      <p class="text-xs text-gray-600 mt-1">{card.figurativeElement[currentLanguage]}</p>
-      <p class="text-xs text-gray-400 mt-1">{truncatedText(card.meaning[currentLanguage], 100)}</p>
+      <p class="text-xs text-gray-600 mt-1 break-words">{card.figurativeElement[currentLanguage]}</p>
+      <p class="text-xs text-gray-400 mt-1 break-words overflow-hidden text-ellipsis">{truncatedText(card.meaning[currentLanguage], 100)}</p>
     {/if}
-  </button>
+  </div>
+</button>

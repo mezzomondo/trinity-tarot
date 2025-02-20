@@ -37,5 +37,8 @@
       {#if card.oracle[currentLanguage]}
       <p class="text-lg mb-2" style="color: rgb(205, 22, 25);"><strong>{$t('oracle')}:</strong> {card.oracle[currentLanguage]}</p>
       {/if}
+      <button on:click={onClose} class="mt-4 px-6 py-2 text-black bg-white border border-black rounded-lg shadow-md hover:bg-gray-200 transition-transform transform hover:scale-105">
+        {#await $t('close')}{:then translatedText}{translatedText}{/await}
+      </button>
     </div>
   </div>

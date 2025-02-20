@@ -19,6 +19,9 @@ export interface State {
         y: Card | null;
         z: Card | null;
     };
+    ui: {
+        selectedCard: Card | null;
+    };
 }
 
 // Schema delle transizioni
