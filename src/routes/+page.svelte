@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { tick } from 'svelte';
   import { writable, get } from 'svelte/store';
   import { locale, t } from 'svelte-i18n';
   import type { Card } from '../types';
@@ -69,12 +70,13 @@
     }
   }
 
-  function closeExplanationModal() {
+  async function closeExplanationModal() {
     isExplanationModalOpen.set(false);
 
     if (state.current === 'ExplanationZ') {
         state.current = 'CardZ';  // ✅ Imposta manualmente l'ultima card
     } else {
+        await tick();
         transition(state, 'NEXT');
     }
   }
@@ -118,21 +120,18 @@
     console.log('Stato corrente dopo START:', state.current);
   }
 
-  function nextStep() {
+  async function nextStep() {
     if (state.current.startsWith('Explanation')) {
         openExplanationModal();
         console.log('Apertura modal spiegazione:', state.current);
     } else {
+        await tick();
         transition(state, 'NEXT');
     }
   }
 
   function restartGame() {
     transition(state, 'RESET');
-  }
-
-  function handleCardSelect(card: Card) {
-    state.ui.selectedCard = card;
   }
 
   const layout = [
@@ -156,14 +155,6 @@
       return layout.map(row => 
           row.filter(item => flatLayout.indexOf(item) < visibleCount)
       );
-  }
-
-  function openPopUp(card: Card) {
-    state.ui.selectedCard = card;
-  }
-
-  function closePopUp() {
-    state.ui.selectedCard = null;
   }
 
 </script>
@@ -213,17 +204,17 @@
   {/if}
 </div>
 
-<Modal isOpen={$isCardModalOpen} onClose={closeCardModal}>
+<Modal isOpen={$isCardModalOpen} onClose={closeCardModal} size="medium">
   {#if state.ui.selectedCard}
     <CardModal card={state.ui.selectedCard} />
   {/if}
 </Modal>
 
-<Modal isOpen={$isInstructionsModalOpen} onClose={closeInstructionsModal}>
+<Modal isOpen={$isInstructionsModalOpen} onClose={closeInstructionsModal} size="large">
   <InstructionsModal />
 </Modal>
 
-<Modal isOpen={$isExplanationModalOpen} onClose={closeExplanationModal}>
+<Modal isOpen={$isExplanationModalOpen} onClose={closeExplanationModal} size="small">
   {#if state.current.startsWith('Explanation')}
       <ExplanationModal 
         stateName={state.current} 
