@@ -39,7 +39,7 @@ const stateMachine: Record<StateKey, { on: Record<string, StateKey | ((state: St
     CardD: { on: { NEXT: (state) => state.config.enableExplanations ? 'ExplanationY' : 'CardY' } },
     ExplanationY: { on: { NEXT: 'CardY' } },
     CardY: { on: { NEXT: (state) => state.config.enableExplanations ? 'ExplanationZ' : 'CardZ' } },
-    ExplanationZ: { on: { FINISH: 'CardZ' } },
+    ExplanationZ: { on: { NEXT: 'CardZ' } },
     CardZ: { on: { RESET: 'Initial' } }
 };
 

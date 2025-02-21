@@ -8,6 +8,7 @@
     export let onRestart: () => void;
     export let onShowInstructions: () => void;
     export let isLastStep: boolean = false;
+    export let isExplanation: boolean;
 
     // State to determine the current step
     const currentStep = writable(0);
@@ -52,7 +53,11 @@
   </script>
   
   <div class="fixed bottom-0 left-0 right-0 text-white p-4 flex justify-around items-center shadow-lg" style="background-color: #d9dadc;">
-    <button on:click={handleClick} class="mt-4 px-6 py-2 text-black bg-white border border-black rounded-lg shadow-md hover:bg-gray-200 transition-transform transform hover:scale-105">
+    <button 
+      on:click={handleClick} 
+      class="mt-4 px-6 py-2 text-black bg-white border border-black rounded-lg shadow-md hover:bg-gray-200 transition-transform transform hover:scale-105"
+      disabled={isExplanation}
+    >
       {#if isLastStep}
         {#await $t('restart')}{:then translatedText}
           {translatedText}

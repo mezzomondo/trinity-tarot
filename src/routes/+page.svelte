@@ -7,6 +7,7 @@
   import Modal from '../components/Modal.svelte';
   import CardModal from '../components/CardModal.svelte';
   import InstructionsModal from '../components/InstructionsModal.svelte';
+  import ExplanationModal from '../components/ExplanationModal.svelte';
   import CardComponent from '../components/Card.svelte';
   import LanguageSwitcher from '../components/LanguageSwitcher.svelte';
   import FooterBar from '../components/FooterBar.svelte';
@@ -14,7 +15,7 @@
   let state: State = $state({
     current: 'Initial',
     config: {
-        enableExplanations: false
+        enableExplanations: true
     },
     data: {
         a: null as Card | null,
@@ -36,6 +37,13 @@
   const cardOrder = cardSequence.map(key => ({ key, label: key.toUpperCase() }));
   let isCardModalOpen = writable(false);
   let isInstructionsModalOpen = writable(false);
+  let isExplanationModalOpen = writable(false);
+
+  $effect(() => {
+      if (state.current.startsWith('Explanation')) {
+          isExplanationModalOpen.set(true); // ✅ Mostra il modal non appena si passa a uno stato Explanation
+      }
+  });
 
   function openCardModal(card: Card) {
     state.ui.selectedCard = card;
@@ -53,6 +61,22 @@
 
   function closeInstructionsModal() {
     isInstructionsModalOpen.set(false);
+  }
+
+  function openExplanationModal() {
+    if (state.config.enableExplanations) {
+      isExplanationModalOpen.set(true);
+    }
+  }
+
+  function closeExplanationModal() {
+    isExplanationModalOpen.set(false);
+
+    if (state.current === 'ExplanationZ') {
+        state.current = 'CardZ';  // ✅ Imposta manualmente l'ultima card
+    } else {
+        transition(state, 'NEXT');
+    }
   }
 
   function populateStateWithRandomNumbers() {
@@ -87,11 +111,20 @@
 
   function startGame() {
     populateStateWithRandomNumbers();
-    transition(state, 'START')
+    transition(state, 'START');
+    if (state.current.startsWith('Explanation')) {
+        openExplanationModal();  // ✅ Apri subito il modal
+    }
+    console.log('Stato corrente dopo START:', state.current);
   }
 
   function nextStep() {
-    transition(state, 'NEXT');
+    if (state.current.startsWith('Explanation')) {
+        openExplanationModal();
+        console.log('Apertura modal spiegazione:', state.current);
+    } else {
+        transition(state, 'NEXT');
+    }
   }
 
   function restartGame() {
@@ -111,6 +144,7 @@
   function getVisibleCardsCount() {
       const current: string = state.current.replace('Card', '').toLowerCase();
       const flatLayout = layout.flat();
+      if (state.current === 'CardZ') return flatLayout.length;
       const index = flatLayout.indexOf(current);
       return index === -1 ? 0 : index + 1;
   }
@@ -189,10 +223,19 @@
   <InstructionsModal />
 </Modal>
 
+<Modal isOpen={$isExplanationModalOpen} onClose={closeExplanationModal}>
+  {#if state.current.startsWith('Explanation')}
+      <ExplanationModal 
+        stateName={state.current} 
+      />
+  {/if}
+</Modal>
+
 <FooterBar 
   onStartGame={startGame}
   onNextStep={nextStep}
   onRestart={restartGame}
   onShowInstructions={openInstructionsModal}
   isLastStep={state.current === 'CardZ'}
+  isExplanation={state.current.startsWith('Explanation')}
 />
