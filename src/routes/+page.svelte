@@ -81,6 +81,11 @@
     }
   }
 
+  function toggleExplanations(enabled: boolean) {
+    state.config.enableExplanations = enabled;
+    console.log('🔁 Spiegazioni abilitate:', enabled);
+  }
+
   function populateStateWithRandomNumbers() {
     const getUniqueRandomIndexes = (count: number, max: number): number[] => {
       const numbers = new Set<number>();
@@ -227,6 +232,8 @@
   onNextStep={nextStep}
   onRestart={restartGame}
   onShowInstructions={openInstructionsModal}
+  onToggleExplanations={toggleExplanations}
   isLastStep={state.current === 'CardZ'}
   isExplanation={state.current.startsWith('Explanation')}
+  enableExplanations={state.config.enableExplanations}
 />
