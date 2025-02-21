@@ -7,4 +7,4 @@
     let currentLanguage: 'it' | 'en' = get(locale) as 'it' | 'en';
 </script>
 
-<h2 class="text-2xl font-bold mb-4">#{stateName}</h2>
+<p class="text-sm text-gray-600 mb-2">{$t(stateName)}</p>
