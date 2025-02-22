@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { type Snippet } from 'svelte';
     import { t } from 'svelte-i18n';
 
     type Props = {
@@ -6,9 +7,10 @@
         onClose: () => void,
         title: string,
         size: 'small' | 'medium' | 'large',
+        children: Snippet,
     }
 
-    let { isOpen, onClose, title = '', size = 'medium' } = $props();
+    let { isOpen, onClose, title = '', size = 'medium', children } = $props();
 </script>
 
 {#if isOpen}
@@ -25,7 +27,7 @@
         </div>
         <!-- Parte inferiore bianca con slot -->
         <div class="p-6 bg-white text-black text-center">
-          <slot/>
+          {@render children()}
           <div class="flex justify-end mt-4">
             <button onclick={onClose} class="px-6 py-2 border  border-black rounded-lg hover:bg-gray-200 transition-transform transform hover:scale-105">
               {#await $t('close')}{:then translatedText}{translatedText}{/await}
@@ -43,7 +45,7 @@
         {#if title}
           <h2 class="text-2xl font-bold mb-4">{title}</h2>
         {/if}
-        <slot/>
+        {@render children()}
         <div class="flex justify-end mt-4">
           <button onclick={onClose} class="px-6 py-2 text-black bg-white border border-black rounded-lg shadow-md hover:bg-gray-200 transition-transform transform hover:scale-105">
             {#await $t('close')}{:then translatedText}{translatedText}{/await}
