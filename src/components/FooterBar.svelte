@@ -71,7 +71,7 @@
   <div class="fixed bottom-0 left-0 right-0 text-white p-4 flex justify-between items-center shadow-lg bg-gray-300">
     <!-- Bottone principale -->
     <button 
-      on:click={handleClick} 
+      onclick={handleClick} 
       class="px-6 py-2 text-black bg-white border border-black rounded-lg shadow-md hover:bg-gray-200 transition-transform transform hover:scale-105"
       disabled={isExplanation}
     >
@@ -90,7 +90,7 @@
       type="checkbox" 
       id="toggle-explanations"
       checked={enableExplanations} 
-      on:change={handleToggleExplanations} 
+      onchange={handleToggleExplanations} 
       class="w-5 h-5 cursor-pointer"
     />
     <label for="toggle-explanations" class="text-black text-sm cursor-pointer">
@@ -99,7 +99,7 @@
   </div>
   
     <!-- Link alle istruzioni -->
-    <button on:click={onShowInstructions} class="text-black hover:underline text-sm">
+    <button onclick={onShowInstructions} class="text-black hover:underline text-sm">
       {#await $t('instructions')}{:then translatedText}{translatedText}{/await}
     </button>
   </div>

@@ -25,7 +25,6 @@
             &times;
           </button>
         </div>
-        <!-- Parte inferiore bianca con slot -->
         <div class="p-6 bg-white text-black text-center">
           {@render children()}
           <div class="flex justify-end mt-4">
