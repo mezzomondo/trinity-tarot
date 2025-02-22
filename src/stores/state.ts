@@ -1,4 +1,3 @@
-// src/stores/state.ts
 import type { Card } from '../types';
 
 // Definizione degli stati
@@ -21,6 +20,7 @@ export interface State {
     };
     ui: {
         selectedCard: Card | null;
+        lastCardElement: HTMLElement | null; // Aggiunto per gestire il riferimento all'ultima carta
     };
 }
 

@@ -1,10 +1,15 @@
 <script lang="ts">
+    import { locale } from 'svelte-i18n';
     import type { Card } from '../types';
   
-    export let card: Card;
-    export let label: string;
-    export let currentLanguage: 'it' | 'en';
-    export let onClick: (card: Card) => void;
+    type Props = {
+      card: Card;
+      label: string;
+      currentLanguage: 'it' | 'en';
+      onClick: (card: Card) => void;
+    }
+
+    let { card, label, currentLanguage, onClick } = $props();
   
     function handleClick() {
       onClick(card);
@@ -24,11 +29,15 @@
       const lastSpaceIndex = truncated.lastIndexOf(' ');
       return (lastSpaceIndex > 0 ? truncated.slice(0, lastSpaceIndex) : truncated) + '...';
     }
+
+    $effect(() => {
+      currentLanguage = $locale as 'it' | 'en';
+    });
   </script>
   
   <button 
-    on:click={handleClick} 
-    on:keydown={handleKeyDown} 
+    onclick={handleClick} 
+    onkeydown={handleKeyDown} 
     class="flex flex-col items-center border border-gray-300 p-4 rounded-lg shadow bg-white w-72 h-96 cursor-pointer overflow-hidden whitespace-normal break-words"
     style="font-family: 'Open Sans', Helvetica, Arial, sans-serif;"
   >

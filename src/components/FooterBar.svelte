@@ -35,19 +35,15 @@
     function handleClick() {
         eventQueue.push(() => {
             if (isLastStep) {
-                console.log('🚀 Restart chiamato');
                 onRestart();
                 currentStep.set(0);
             } else if ($currentStep === 0) {
-                console.log('🔥 Inizio gioco');
                 onStartGame();
                 currentStep.update(n => n + 1);
             } else {
-                console.log('➡️ Prossimo step');
                 onNextStep();
                 currentStep.update(n => n + 1);
             }
-            console.log('✅ Rendering completato');
         });
 
         processQueue(); // ✅ Processa la coda
