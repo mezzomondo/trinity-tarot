@@ -3,14 +3,27 @@
     import { writable } from 'svelte/store';
     import { tick } from 'svelte';
   
-    export let onStartGame: () => void;
-    export let onNextStep: () => void;
-    export let onRestart: () => void;
-    export let onShowInstructions: () => void;
-    export let onToggleExplanations: (enabled: boolean) => void;
-    export let isLastStep: boolean = false;
-    export let isExplanation: boolean;
-    export let enableExplanations: boolean;
+    type Props = {
+    onStartGame: () => void;
+    onNextStep: () => void;
+    onRestart: () => void;
+    onShowInstructions: () => void;
+    onToggleExplanations: (enabled: boolean) => void;
+    isLastStep: boolean;
+    isExplanation: boolean;
+    enableExplanations: boolean;
+  };
+
+  let { 
+    onStartGame, 
+    onNextStep, 
+    onRestart, 
+    onShowInstructions, 
+    onToggleExplanations, 
+    isLastStep = false, 
+    isExplanation, 
+    enableExplanations 
+  } = $props();
 
     // State to determine the current step
     const currentStep = writable(0);

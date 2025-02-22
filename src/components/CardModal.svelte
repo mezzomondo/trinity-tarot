@@ -3,7 +3,11 @@
     import { locale, t } from 'svelte-i18n';
     import { get } from 'svelte/store';
   
-    export let card: Card;
+    type Props = {
+        card: Card;
+    };
+
+    let { card } = $props();
     let currentLanguage: 'it' | 'en' = get(locale) as 'it' | 'en';
 </script>
 

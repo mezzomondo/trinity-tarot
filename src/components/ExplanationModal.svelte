@@ -1,7 +1,11 @@
 <script lang="ts">
     import { t } from 'svelte-i18n';
 
-    export let stateName: string;
+    type Props = {
+        stateName: string;
+    };
+
+    let { stateName } = $props();
 
 </script>
 
