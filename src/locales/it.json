@@ -1,31 +1,285 @@
 {
-  "start": "Inizia",
-  "next": "Continua",
-  "close": "Chiudi",
-  "calculateXY": "Calcola X e Y",
-  "calculateZ": "Calcola Z",
-  "figurativeElement": "Elemento Figurativo",
-  "ability": "Abilità",
-  "meaning": "Significato",
-  "numberAndQuantity": "Numero e Quantità",
-  "oracle": "Oracolo",
-  "instructions": "Istruzioni",
-  "oracleGameTitle": "Il Gioco-Oracolo definitivo",
-  "oracleGameSubTitle": "Un aiuto per la navigazione nel mondo",
-  "oracleGameText": "Trinity è un modello del mondo composto da simboli elementari. Trinity Tarot sviluppa questo modello in un gioco-oracolo. Basato sul 'linguaggio' intuitivo delle immagini anziché delle parole, ti permette di attivare strati più profondi della tua coscienza – e quindi immergerti in fasi più profonde di auto-riflessione e orientamento.",
-  "restart": "Ricomincia",
-  "gameInstructions": "Istruzioni del Gioco",
-  "instGameTitle": "Un Gioco-Oracolo",
-  "instLayingTitle": "Disposizione e lettura",
-  "instLayingText": "Lo scopo è aggregare coincidenze, generando ciò che lo psicologo C. G. Jung chiamava 'Singolarità'. Pensa a una domanda personale che ti sta a cuore. Un oracolo ha bisogno di una domanda per rispondere.",
-  "instAxialTitle": "Leggere l'Oracolo della Croce Assiale",
-  "instAxialText": "Queste sono le istruzioni originali, il processo qui è in realtà quasi completamente automatico.<br/><br/>Le prime due carte effettive, A e B, formano l'asse temporale della tua domanda.<br/><br/>La carta A rappresenta l'inizio della situazione o del tema della tua domanda, come il lavoro, un obiettivo personale o una relazione.<br/>La carta B indica la direzione in cui questa situazione si è sviluppata fino a questo momento.<br/><br/>Il passo successivo è determinare la carta X, il primo elemento del tuo oracolo.<br/><br/>La carta X è la carta il cui valore numerico corrisponde alla somma dei valori delle carte A e B.<br/>Se la somma supera 28, utilizza la somma dei checksum delle carte A e B.<br/>Il simbolo sulla carta X indica il comportamento o lo stato mentale su cui dovresti concentrarti per progredire positivamente lungo l'asse temporale della tua domanda.<br/><br/>Le due carte effettive successive, C e D, si riferiscono ai due poli opposti, forze e debolezze, cruciali nel contesto più ampio della tua domanda.<br/><br/>La carta Y, il secondo elemento del tuo oracolo, si determina con la stessa procedura di X, sommando i valori numerici (o i checksum) delle carte C e D.<br/>Il simbolo sulla carta Y indica il comportamento o lo stato mentale su cui dovresti concentrarti per armonizzare i poli opposti rappresentati da C e D.<br/><br/>Infine, la somma di X e Y forma l'asse attorno al quale ruota tutto ciò che è rilevante per la tua domanda.<br/><br/>La carta risultante, Z, è l'elemento chiave e la sintesi del tuo oracolo.<br/><br/>Le procedure e i simboli del Trinity Tarot ti offrono stimoli e direzioni per l'auto-riflessione e l'orientamento.<br/>Come accadeva a Delfi, il compito del destinatario di un oracolo è interpretare questi stimoli e indicazioni attraverso libere associazioni mentali, nel contesto della propria domanda. Le descrizioni dei simboli riportate di seguito potrebbero esserti di aiuto in questo processo.",
-  "showExplanations": "Spiegazioni",
-  "ExplanationA": "Le prime due carte efficaci, A e B, formano l'asse temporale della tua domanda. La carta A rappresenta l'inizio della situazione o del tema della tua domanda, ad esempio, il lavoro, un obiettivo personale o una relazione.",
-  "ExplanationB": "La carta B rappresenta la direzione in cui questa situazione si è evoluta finora.",
-  "ExplanationX": "Il passo successivo consiste nel determinare la carta X, il primo elemento del tuo oracolo. La carta X è la carta il cui valore numerico equivale alla somma dei valori delle carte A e B modulo 28. Il simbolo sulla carta X indica quale comportamento o stato mentale dovresti concentrarti per avanzare positivamente lungo l'asse temporale della tua domanda.",
-  "ExplanationC": "Le successive due carte efficaci, C e D, si riferiscono ai due poli opposti, punti di forza e debolezze, che sono cruciali nel contesto più ampio della tua domanda. La carta C rappresenta il tuo punto di forza; nota che il punto di forza non è sempre positivo.",
-  "ExplanationD": "La carta D rappresenta la tua debolezza; nota che la debolezza non è sempre negativa.",
-  "ExplanationY": "La carta Y, il secondo elemento del tuo oracolo, viene determinata nello stesso modo della carta X, cioè sommando i valori numerici (o i checksum) delle carte C e D. Il simbolo sulla carta Y indica quale comportamento o stato mentale dovresti concentrarti per armonizzare i poli opposti rappresentati dalle carte C e D.",
-  "ExplanationZ": "Infine, la somma della carta X e della carta Y forma l'asse intorno al quale ruota tutto ciò che è rilevante per la tua domanda. La carta risultante, Z, è l'elemento chiave e la sintesi del tuo oracolo."
+	"cards": {
+		"1": {
+			"name": "Embrione",
+			"figurativeElement": "Embrione, il non ancora nato e già vivo. L'uovo fecondato.",
+			"ability": "La prontezza a iniziare che precede il primo passo.",
+			"meaning": "L'inizio potenziale, un prerequisito per ogni vero inizio. Impulso iniziale che precede ogni attività. Senza durata propria, è sempre da richiamare alla vita. Cosmologicamente: il senza tempo prima del Big Bang, l'esistente prima del tempo e dello spazio.",
+			"numberAndQuantity": "UNITÀ. L'unità a riposo in se stessa, prima della molteplicità contabile. L'unico indivisibile prima dell'infinità del divisibile, l'atomo della molteplicità. Tutte le qualità sono contenute nell'unità, che poi si dispiegano in quantità, schemi e cicli. Ogni numero successivo è una forma di gioco dell'unità. Tutti i modelli delle loro combinazioni sono varianti della potenzialità dell'unità. Primo elemento nella triade delle abilità del livello elementare (1, 2, 3). Analogo a 10 nel livello mentale e 19 nel livello cosmico (con la stessa somma trasversale, posizione e qualità di base). 10 = 1 + 0 = 1; 19 = 1 + 9 = 10 = 1 + 0 = 1.",
+			"contextualDescription": "Primo elemento nella triade delle abilità del livello elementare (1, 2, 3). Analogo a 10 nel livello mentale e 19 nel livello cosmico (con la stessa somma trasversale, posizione e qualità di base). 10 = 1 + 0 = 1; 19 = 1 + 9 = 10 = 1 + 0 = 1.",
+			"oracle": "Sii pronto a iniziare!"
+		},
+		"2": {
+			"name": "Occhio",
+			"figurativeElement": "Occhio che vede, archeogramma per il risveglio e la percezione in ogni forma. Geroglifico VISTA e AZIONE.",
+			"ability": "Percezione: sensi esterni e interni: vedere, udire, sentire, odorare, pensare, percepire, emozioni.",
+			"meaning": "Capacità complessiva di percepire. Prerequisito per questo: Vigilanza. La percezione è un prerequisito per la coscienza e la creatività. La percezione collega il percepente con il percepito: Soggetto con oggetto. All'ego, una controparte. L'inizio della dualità. Con apparenti coppie di opposti: bene/male, luce/buio, sopra/sotto. Il principio connettivo in tutto ciò che vive permette all'elemento attivo (1) di dare impulsi all'elemento passivo/ricevente (3) e a quest'ultimo di reagire ad essi.",
+			"numberAndQuantity": "DUE. La dualità, gli antipodi. La tensione tra loro forma la prima linea. Dualità. Raddoppiamento/Riflessione dell'unità che si riconosce nell'opposto. L'universo: letteralmente il fronteggiarsi. Secondo elemento nella triade delle abilità del livello elementare (1, 2, 3). Forza connettiva. Analogo a 11 nel piano mentale e 20 nel piano cosmico (con la stessa somma trasversale e posizione).",
+			"contextualDescription": "Secondo elemento nella triade delle abilità del livello elementare (1, 2, 3). Forza connettiva. Analogo a 11 nel piano mentale e 20 nel piano cosmico (con la stessa somma trasversale e posizione).",
+			"oracle": "Presta attenzione a percepire! Sii vigile!"
+		},
+		"3": {
+			"name": "Passo",
+			"figurativeElement": "Gambe che camminano, geroglifico per il movimento.",
+			"ability": "Movimento: movimento fisico, movimento mentale, movimento spirituale. Cambio di posizione, crescita, fertilità, sviluppo.",
+			"meaning": "La dimensione del tempo nello spazio. Il movimento è la somma e la conseguenza dei primi due elementi. Ogni azione è movimento. Respirare è movimento. Pensare è movimento. La crescita è movimento. Ricordare muove il passato nel presente. Aspettare è una forma di ricordare. La trinità gioca un ruolo speciale in tutte le tradizioni. Forma una nuova unità attiva. Trinità dall'interazione di tre principi: attivo - reattivo/ricevente - mediatrice/creativa. Tutte le cose buone vengono in tre. Fede / amore / speranza. Il bello / vero / buono.",
+			"numberAndQuantity": "TRE. La trinità. Con tre impulsi diversi che interagiscono per creare una nuova unità dinamica. Primo impulso: attivo, trasmettitore. Secondo impulso: ricettivo, ricevitore. Terzo impulso: unificante. Forma: il triangolo, tre punti definiscono la superficie. Terzo elemento nella triade delle abilità del livello elementare (1, 2, 3). Analogo a 12 nel piano mentale e 21 nel piano cosmico (con la stessa somma trasversale, posizione e qualità di base). Il principio passivo, accettante nella vita elementare.",
+			"contextualDescription": "Terzo elemento nella triade delle abilità del livello elementare (1, 2, 3). Analogo a 12 nel piano mentale e 21 nel piano cosmico (con la stessa somma trasversale, posizione e qualità di base). Il principio passivo, accettante nella vita elementare.",
+			"oracle": "Presta attenzione a ogni forma di movimento, fisico e mentale!"
+		},
+		"4": {
+			"name": "Mano",
+			"figurativeElement": "Mano, il mondo delle azioni, attività.",
+			"ability": "",
+			"meaning": "Ogni azione avviene nel tempo. Il suo effetto è in un futuro che presto sarà passato. L'impulso per l'azione può venire dal futuro, così come dal passato, che diventa futuro attraverso l'azione. Quaternità. Fin dai tempi antichi, quattro è il numero della materia. Quattro elementi, quattro stagioni, quattro direzioni del vento, quattro umori. Il paradiso aveva quattro fiumi. Al centro c'era l'albero della conoscenza. Quattro è il principio attivo della triade dei luoghi d'azione e fornisce l'impulso per l'elemento ricettivo, passivo (6), da cui è attratto.",
+			"numberAndQuantity": "QUATTRO. La quaternità consiste in due coppie che si incontrano in una prima forma di compagnia. È simmetrica. Ogni punto tocca due vicini diretti e ha una controparte più distante, diagonale. Il quadrato simboleggia i quattro elementi e l'ordine materiale. Quattro punti definiscono lo spazio e formano il tetraedro con quattro facce triangolari, quattro bordi e quattro angoli. Primo dei tre luoghi di azione in cui le abilità (carte 1, 2, 3) si manifestano a livello elementare. Elemento connettivo nella triade dei luoghi d'azione. Analogo a 13 nel livello mentale e 22 nel livello cosmico (con la stessa somma trasversale, posizione e qualità di base).",
+			"contextualDescription": "Primo dei tre luoghi di azione in cui le abilità (carte 1, 2, 3) si manifestano a livello elementare. Elemento connettivo nella triade dei luoghi d'azione. Analogo a 13 nel livello mentale e 22 nel livello cosmico (con la stessa somma trasversale, posizione e qualità di base).",
+			"oracle": "Presta attenzione alle azioni e ai loro effetti!"
+		},
+		"5": {
+			"name": "Bocca",
+			"figurativeElement": "Bocca.",
+			"ability": "Capacità mentale di usare la lingua come strumento.",
+			"meaning": "Il mondo del linguaggio, della comunicazione: Tutte le cose viventi comunicano. Animali e piante, tutti gli organi tra loro, cervello con intestino, cellule con cellule vicine, soli con pianeti. Luce con gravità. 5 Comunica con 4 e 6. Il linguaggio porta 'intuizione' dal mondo impalpabile delle emozioni (6 BACIO) nel mondo delle azioni (4 MANO) e gli effetti delle azioni nel mondo delle emozioni.",
+			"numberAndQuantity": "CINQUE. L'insieme 5 è formato da due gruppi di tre che hanno un elemento in comune, che funge da ponte di collegamento tra i due. Cinque dita. Quintessenza. La croce, un punto al centro che collega quattro direzioni. Corpo: la piramide, un punto in altezza collega quattro angoli a terra. Secondo dei tre luoghi d'azione/mondi in cui le abilità (1, 2, 3) si manifestano a livello elementare. Elemento connettivo nella triade dei luoghi d'azione. Analogo a 14 nel livello mentale e 23 nel livello cosmico (con la stessa somma trasversale, posizione e qualità di base).",
+			"contextualDescription": "Secondo dei tre luoghi d'azione/mondi in cui le abilità (1, 2, 3) si manifestano a livello elementare. Elemento connettivo nella triade dei luoghi d'azione. Analogo a 14 nel livello mentale e 23 nel livello cosmico (con la stessa somma trasversale, posizione e qualità di base).",
+			"oracle": "Presta attenzione al modo in cui comunichi!"
+		},
+		"6": {
+			"name": "Bacio",
+			"figurativeElement": "Bacio.",
+			"ability": "La capacità di amare e di essere amati.",
+			"meaning": "Il mondo del sensuale, emozionale, Eros. Qualità: Amore, attrazione, repulsione. A livello funzionale, questa stazione è legata al compito elementare della riproduzione. L'efficacia è premiata qui con un rilascio di piacere. Allo stesso modo, il piacere mentale e il piacere cosmico sono percepiti rispettivamente nelle stazioni 15 SIGNIFICATO e 24 PIEDI. Il principio ricettivo nella vita elementare. Reagisce agli impulsi dalla zona efficace delle azioni che essa, in attesa, evoca. Tipico per 6, 15, 24, comandamenti, proibizioni e tabù hanno effetto qui.",
+			"numberAndQuantity": "SEI. 6 è il numero cosiddetto 'perfetto'. L'unico numero nell'infinità dei numeri che è sia la somma che la moltiplicazione dei suoi divisori. Primo numero triangolare: 1+2+3. Relativo agli altri numeri triangolari 10, 15, 21, 28. Come simbolo: due triangoli intrecciati: l'esagramma. Gli esagoni regolari riempiono un piano senza spazi vuoti. Forma del nido d'ape. Terzo dei tre luoghi d'azione/mondi in cui le abilità (1, 2, 3) si manifestano a livello elementare. Elemento reattivo nella triade dei centri d'azione. Reagisce agli impulsi emanati da 4 e trasmessi da 5. Analogo a 15 nel livello mentale e 24 nel livello cosmico (con la stessa somma trasversale, posizione e qualità di base).",
+			"contextualDescription": "Terzo dei tre luoghi d'azione/mondi in cui le abilità (1, 2, 3) si manifestano a livello elementare. Elemento reattivo nella triade dei centri d'azione. Reagisce agli impulsi emanati da 4 e trasmessi da 5. Analogo a 15 nel livello mentale e 24 nel livello cosmico (con la stessa somma trasversale, posizione e qualità di base).",
+			"oracle": "Presta attenzione alla componente erotica!"
+		},
+		"7": {
+			"name": "Pantera",
+			"figurativeElement": "Pantera, archeogramma per l'indomito, elegante.",
+			"ability": "La forza impulsiva e attiva della giovinezza.",
+			"meaning": "Prima fase della realizzazione: giovinezza, Curiosità. Individualità. Testare la propria forza e i propri limiti. Partire per nuovi territori. Rilascio dalla protezione della famiglia. 7 - un numero speciale in molte tradizioni: sette giorni. Sette note nell'ottava. Sette colori nell'arcobaleno.",
+			"numberAndQuantity": "SETTE. 6 punti intorno a un nucleo interno di dimensioni uguali. I punti esterni proteggono/nascondono quello interno, che dà loro supporto. Prima stazione nella triade delle fasi in cui le abilità (1,2,3) si sviluppano a livello elementare. Potere impulsivo e attivo. Analogo a 16 nel livello mentale e 25 nel livello cosmico (con la stessa somma trasversale, posizione e qualità di base).",
+			"contextualDescription": "Prima stazione nella triade delle fasi in cui le abilità (1,2,3) si sviluppano a livello elementare. Potere impulsivo e attivo. Analogo a 16 nel livello mentale e 25 nel livello cosmico (con la stessa somma trasversale, posizione e qualità di base).",
+			"oracle": "Sii indomito!"
+		},
+		"8": {
+			"name": "Equilibrio",
+			"figurativeElement": "Ciclo, ascendente e discendente.",
+			"ability": "",
+			"meaning": "Il percorso della mezza età. Il potere stabilizzante dell'equilibrio. 'Giustizia'. La persona giusta presta attenzione al trattamento equo di tutte le parti e si mette in secondo piano. Fase di bilanciamento. 8, 17, 26 sono fasi di transizione: Il dubbio. Due direzioni sono possibili. Media tra giovinezza (7 PANTERA) e vecchiaia (9 RIPOSO).",
+			"numberAndQuantity": "OTTO. Il quadrato 3 x 3 senza un centro. O 2 x 4, scala del materiale. 8 = 2 ³, primo cubo. Come solido: l'ottagono, la doppia piramide, forma cristallina del carbonio, diamante. La quantità 8 può essere divisa tre volte in parti uguali. Seconda stazione nella triade delle fasi in cui le abilità (1,2,3) si sviluppano a livello elementare. Forza connettiva e bilanciante. Analogo a 17 nel livello mentale e 26 nel livello cosmico (con la stessa somma trasversale, posizione e qualità di base).",
+			"contextualDescription": "Seconda stazione nella triade delle fasi in cui le abilità (1,2,3) si sviluppano a livello elementare. Forza connettiva e bilanciante. Analogo a 17 nel livello mentale e 26 nel livello cosmico (con la stessa somma trasversale, posizione e qualità di base).",
+			"oracle": "Presta attenzione all'equilibrio!"
+		},
+		"9": {
+			"name": "Riposo",
+			"figurativeElement": "Figura che riposa.",
+			"ability": "",
+			"meaning": "Fase: vecchiaia, 'riposo meritato', esperienza accumulata.",
+			"numberAndQuantity": "NOVE. La totalità dei numeri di base in un quadrato. Quadrato magico. Un nuovo ciclo inizia dopo 9. Quadrato magico 3 × 3. somme, anche in diagonale 15. Terza stazione nella triade delle fasi in cui le abilità (1,2,3) si sviluppano a livello elementare. Potere ricettivo e reattivo. Analogo a 18 nel livello mentale e 27 nel livello cosmico (con la stessa somma trasversale, posizione e qualità di base).",
+			"contextualDescription": "Terza stazione nella triade delle fasi in cui le abilità (1,2,3) si sviluppano a livello elementare. Potere ricettivo e reattivo. Analogo a 18 nel livello mentale e 27 nel livello cosmico (con la stessa somma trasversale, posizione e qualità di base).",
+			"oracle": "La forza risiede nella tranquillità!"
+		},
+		"10": {
+			"name": "Chiave",
+			"figurativeElement": "Chiave.",
+			"ability": "La capacità mentale di usare la mente come strumento.",
+			"meaning": "Ingresso nel mondo mentale. Distingue il mondo umano dal mondo animale. Biblicamente: il frutto dell'albero della conoscenza. Uscita dal paradiso. Apertura alla cultura. La chiave apre e chiude. Il mondo mentale è il ponte tra la vita elementare e il cosmo. Con i propri limiti.",
+			"numberAndQuantity": "DIECI. Set triangolare di 1 + 2 + 3 + 4, correlato come forma agli altri set triangolari 6, 15, 21, 28. Mostra l'effetto delle tre facoltà di base 1, 2, 3 sulla materia 4. Nell'antichità: Tetraktys: segno di perfezione e completamento. La quantità 8 può essere divisa tre volte in parti uguali. Primo elemento della triade delle facoltà del piano mentale (10, 11, 12). Potenza attiva e impulsiva. Analogo a 1 nel piano elementare e 19 nel piano cosmico (con la stessa somma trasversale, posizione e qualità di base).",
+			"contextualDescription": "Primo elemento della triade delle facoltà del piano mentale (10, 11, 12). Potenza attiva e impulsiva. Analogo a 1 nel piano elementare e 19 nel piano cosmico (con la stessa somma trasversale, posizione e qualità di base).",
+			"oracle": "Usa la mente come strumento!"
+		},
+		"11": {
+			"name": "Forza",
+			"figurativeElement": "Mani e braccia sollevate, geroglifico KA, forza vitale.",
+			"ability": "La capacità mentale di cercare e trovare forza.",
+			"meaning": "Posizione classica di preghiera. Il tocco del cielo, contatto con forze superiori. (11) FORZA trasmette l'impulso del pensiero da (10 CHIAVE) e permette (12) RIVOLUZIONE.",
+			"numberAndQuantity": "UNDICI. L'insieme 11 collega due triangoli di 1+2+3 a un punto comune. Due mondi si incontrano in questo punto e si fondono l'uno nell'altro. 11 è la prima quantità composita, collegando alto e basso: Qui si libera la forza. Secondo elemento della triade delle abilità del piano mentale (10, 11, 12). Forza connettiva e bilanciante. Analogo a 2 nel piano elementare e 20 nel piano cosmico (con la stessa somma trasversale, posizione e qualità di base).",
+			"contextualDescription": "Secondo elemento della triade delle abilità del piano mentale (10, 11, 12). Forza connettiva e bilanciante. Analogo a 2 nel piano elementare e 20 nel piano cosmico (con la stessa somma trasversale, posizione e qualità di base).",
+			"oracle": "Trova la forza!"
+		},
+		"12": {
+			"name": "Rivoluzione",
+			"figurativeElement": "Spirali contro-rotanti.",
+			"ability": "La capacità mentale di cambiare la direzione del pensiero.",
+			"meaning": "Applicazione del pensiero e della forza. Indipendenza. Prontezza per la rivoluzione.",
+			"numberAndQuantity": "DODICI. Tre sette interbloccati (7=individuo) formano un triangolo con punte troncate e centri vaganti. Libertà individuale. 12 è il numero con molti divisori: 1, 2, 3, 4, 6 e 12. La dozzina è stata quindi usata fin dall'antichità come base per molti sistemi di conteggio e misurazione. Dalle prime civiltà della Mesopotamia, il giorno è stato diviso in due periodi di dodici ore e l'anno in 12 mesi con 12 stazioni e segni dello zodiaco. Terzo elemento della triade delle abilità del piano mentale (10, 11, 12). Potere ricettivo e reattivo. Analogo a 3 nel piano elementare e 21 nel piano cosmico (con la stessa somma trasversale, posizione e qualità di base).",
+			"contextualDescription": "Terzo elemento della triade delle abilità del piano mentale (10, 11, 12). Potere ricettivo e reattivo. Analogo a 3 nel piano elementare e 21 nel piano cosmico (con la stessa somma trasversale, posizione e qualità di base).",
+			"oracle": "Sii pronto per la rivoluzione!"
+		},
+		"13": {
+			"name": "Sonno",
+			"figurativeElement": "Volto addormentato.",
+			"ability": "",
+			"meaning": "Il mondo del sonno e dei sogni. L'antitesi del risveglio. Sonno: Fratello della morte. Hypnos (sonno) fratello di Thanatos (morte). Nella mitologia greca, figli di Nyx (notte) e Erebos (oscurità). Il sonno termina la percezione cosciente e apre alla percezione del mondo dei sogni personali, dei ricordi inconsci e delle impronte. Risveglio e sonno: ripetizione ciclica. La transitorietà cerca durata nella ripetizione. L'ispirazione da 12 RIVOLUZIONE e 14 ANIMA è possibile nei sogni. 13 può dare impulso all'azione (4 MANO).",
+			"numberAndQuantity": "TREDICI. Due triangoli tetraktys intrecciati. (1+2+3+4). Formano una stella a sei punte con il numero 7 come centro. Le punte esterne dei triangoli formano un involucro aperto, una seconda conchiglia. 13 sfere delle stesse dimensioni riempiono una sfera esterna con tre volte il suo diametro. Il nucleo interno tocca tutte le sfere esterne, che circondano intorno ad esso in 4 file su 4 assi e formano un involucro. Primo dei tre luoghi d'azione in cui le abilità (10, 11, 12) si manifestano a livello mentale. Elemento attivo e impulsivo nella triade dei centri d'azione. Analogo a 4 nel livello elementare e 22 nel livello cosmico (con la stessa somma trasversale, posizione e qualità di base).",
+			"contextualDescription": "Primo dei tre luoghi d'azione in cui le abilità (10, 11, 12) si manifestano a livello mentale. Elemento attivo e impulsivo nella triade dei centri d'azione. Analogo a 4 nel livello elementare e 22 nel livello cosmico (con la stessa somma trasversale, posizione e qualità di base).",
+			"oracle": "Presta attenzione ai tuoi sogni!"
+		},
+		"14": {
+			"name": "Anima",
+			"figurativeElement": "Uccello con testa umana. Sirena nella mitologia greca, geroglifico BA, anima.",
+			"ability": "",
+			"meaning": "Il mondo del sovrapersonale. Mondo dell'anima. Effetto della memoria epigenetica, collettiva. Immortalità relativa e supratemporalità. Coscienza normativa. Conflitto con posizioni individuali-personali. Come 'intuizione', porta significati da (15 SIGNIFICATO) nei sogni chiaroveggenti (13 SONNO) e, viceversa, esperienze personali nelle manifestazioni dei significati.",
+			"numberAndQuantity": "QUATTORDICI. L'insieme 14 è formato dagli insiemi 7+7, le esperienze di un individuo fluiscono in un altro. Secondo dei tre luoghi d'azione in cui le abilità (10, 11, 12) si manifestano a livello mentale. Elemento connettivo e bilanciante della triade dei luoghi d'azione. Analogo a 5 nel livello elementare e 23 nel livello cosmico. (con la stessa somma trasversale, posizione e qualità di base).",
+			"contextualDescription": "Secondo dei tre luoghi d'azione in cui le abilità (10, 11, 12) si manifestano a livello mentale. Elemento connettivo e bilanciante della triade dei luoghi d'azione. Analogo a 5 nel livello elementare e 23 nel livello cosmico. (con la stessa somma trasversale, posizione e qualità di base).",
+			"oracle": "Presta attenzione al sovrapersonale!"
+		},
+		"15": {
+			"name": "Significato",
+			"figurativeElement": "Mano con dito indice puntato.",
+			"ability": "",
+			"meaning": "Mondo dei significati, delle assegnazioni e delle regolamentazioni, comandamenti, proibizioni e tabù. I significati sono prodotti del pensiero, stampi della struttura mentale che li ha creati. La forma complessiva di tutte le impronte mentali e delle restrizioni alla libertà dell'individuo. La ricerca del significato promette piacere come ricompensa per averlo trovato (come nella risoluzione di enigmi), oltre a dare 'significato' alla vita. Questo fenomeno corrisponde alla componente erotica di 6 BACIO e all'esperienza del piacere nell'illuminazione cosmica 24 PIEDI.",
+			"numberAndQuantity": "QUINDICI. 15 è l'insieme triangolare di 1 + 2 + 3 + 4 + 5. Come forma è correlato agli altri insiemi triangolari 6, 10, 21, 28. La comunicazione 5 si aggiunge alla perfezione (10). Terzo dei tre luoghi d'azione in cui le abilità (10, 11, 12) si manifestano a livello mentale. Elemento ricettivo e reattivo della triade dei centri d'azione. Analogo a 6 nel livello elementare e 24 nel livello cosmico. (con la stessa somma trasversale, posizione e qualità di base). Tipici per 6, 15, 24 sono le promesse di piacere così come i comandamenti, le proibizioni e i tabù.",
+			"contextualDescription": "Terzo dei tre luoghi d'azione in cui le abilità (10, 11, 12) si manifestano a livello mentale. Elemento ricettivo e reattivo della triade dei centri d'azione. Analogo a 6 nel livello elementare e 24 nel livello cosmico. (con la stessa somma trasversale, posizione e qualità di base). Tipici per 6, 15, 24 sono le promesse di piacere così come i comandamenti, le proibizioni e i tabù.",
+			"oracle": "Riconosci il significato!"
+		},
+		"16": {
+			"name": "Ancora",
+			"figurativeElement": "Ancora.",
+			"ability": "",
+			"meaning": "Ancorare ciò che è stato appreso. Costruire su ciò che è stato appreso. Lottare contro l'oblio. Completamento dell'apprendistato. Verificare ciò che è stato appreso. Riconoscerne i limiti.",
+			"numberAndQuantity": "SEDICI. 16 quadrato 4x4. 4 file con 4 unità ciascuna. Immagine dell'ordinato e costruito artificialmente. Artificiale e instabile. Prima stazione della triade delle fasi in cui le abilità (10,11,12) si sviluppano a livello mentale. Potenza impulsiva, attiva. Analogo a 7 nel livello elementare e 25 nel livello cosmico (con la stessa somma trasversale, posizione e qualità di base).",
+			"contextualDescription": "Prima stazione della triade delle fasi in cui le abilità (10,11,12) si sviluppano a livello mentale. Potenza impulsiva, attiva. Analogo a 7 nel livello elementare e 25 nel livello cosmico (con la stessa somma trasversale, posizione e qualità di base).",
+			"oracle": "Tutto ciò che è stato appreso è limitato!"
+		},
+		"17": {
+			"name": "Scale",
+			"figurativeElement": "Scale.",
+			"ability": "",
+			"meaning": "Transizione tra due livelli. Decisione: salire / scendere / fermarsi. 8, 17, 26 sono fasi di transizione: Il dubbio. Due direzioni possibili. L'altezza crea profondità. Le montagne creano valli. L'orgoglio precede una caduta.",
+			"numberAndQuantity": "DICIASSETTE. Due quadrati 3 × 3, in alto e in basso, con un elemento comune come punto di transizione. Punto decisionale per salita o discesa. Seconda stazione della triade delle fasi in cui le abilità (10,11,12) si sviluppano nel piano mentale. Forza connettiva e bilanciante. Analogo a 8 nel piano elementare e 26 nel piano cosmico (con la stessa somma trasversale, posizione e qualità di base).",
+			"contextualDescription": "Seconda stazione della triade delle fasi in cui le abilità (10,11,12) si sviluppano nel piano mentale. Forza connettiva e bilanciante. Analogo a 8 nel piano elementare e 26 nel piano cosmico (con la stessa somma trasversale, posizione e qualità di base).",
+			"oracle": "Decidi: su o giù!"
+		},
+		"18": {
+			"name": "Cobra",
+			"figurativeElement": "Cobra eretto. Ureo, il cobra eretto, era l'elemento centrale sulla corona del faraone. Difende la conoscenza dietro la fronte del re.",
+			"ability": "",
+			"meaning": "Difesa della conoscenza preziosa. Separazione della comprensione esperienziale dalla conoscenza appresa. Disponibilità a difendere la verità. Difesa del mondo mentale nel suo complesso.",
+			"numberAndQuantity": "DICIOTTO. Un cerchio di sei elementi, circondato da un esagono di dodici elementi, circondano e proteggono un centro che rimane vuoto. L'insieme 19, (IL SOLE) senza il nucleo centrale. 18 mostra la vicinanza al sole, il cui centro difende. Terza stazione della triade delle fasi in cui le abilità (10,11,12) si sviluppano nel piano mentale. Potere ricettivo e reattivo. Analogo a 9 nel piano elementare e 27 nel piano cosmico (con la stessa somma trasversale, posizione e qualità di base).",
+			"contextualDescription": "Terza stazione della triade delle fasi in cui le abilità (10,11,12) si sviluppano nel piano mentale. Potere ricettivo e reattivo. Analogo a 9 nel piano elementare e 27 nel piano cosmico (con la stessa somma trasversale, posizione e qualità di base).",
+			"oracle": "Scrutina ciò che stai difendendo!"
+		},
+		"19": {
+			"name": "Sole",
+			"figurativeElement": "Ideogramma sole, oro, geroglifico non modificato.",
+			"ability": "Percezione della qualità 'sole': luce, splendore spirituale, bellezza.",
+			"meaning": "La bellezza è una forma di gioia. Gioia, piacere; la bellezza è ricompensa e nutrimento, bussola e segnale.",
+			"numberAndQuantity": "DICIANNOVE. Un nucleo centrale al centro e sei elementi che formano un guscio protettivo attorno a questo nucleo (insieme il numero 7, la settenza, l'individuo). Pertanto un esagono di dodici punti di dimensioni uguali come seconda conchiglia. Protezione e stabilità. Primo elemento della triade delle abilità nel piano cosmico (19, 20, 21). Forza energetica e attiva. Analogo a 10 nel piano mentale e 1 nel piano elementare (con la stessa somma trasversale e posizione).",
+			"contextualDescription": "Primo elemento della triade delle abilità nel piano cosmico (19, 20, 21). Forza energetica e attiva. Analogo a 10 nel piano mentale e 1 nel piano elementare (con la stessa somma trasversale e posizione).",
+			"oracle": "Presta attenzione allo splendore, alla gioia, alla bellezza!"
+		},
+		"20": {
+			"name": "Stella",
+			"figurativeElement": "Ideogramma stella e essere umano.",
+			"ability": "Percezione della connessione tra uomo e cosmo.",
+			"meaning": "Microcosmo / Macrocosmo. Stella esterna e stella interna. Leonardo: ‘Chi si è rivolto alla sua stella non torna più indietro’.",
+			"numberAndQuantity": "VENTI. 20 si presenta come due insiemi triangolari di 10 (1+2+3+4), che giacciono con le loro punte l'uno contro l'altro. Un triangolo punta verso l'alto, l'altro verso il basso. Microcosmo e macrocosmo si toccano.",
+			"contextualDescription": "Secondo elemento della triade delle abilità del livello cosmico (19, 20, 21). Forza connettiva e bilanciante. Analogo a 11 del piano mentale e 2 del piano elementare (con la stessa somma trasversale, posizione e qualità di base).",
+			"oracle": "Senti la stella interiore!"
+		},
+		"21": {
+			"name": "Trinità",
+			"figurativeElement": "3 elementi formano un'unità fluendo l'uno nell'altro. Inversione continua. Figura senza esterno e interno. Un cuore si forma da un altro, formando il primo.",
+			"ability": "Percezione dell'interazione triplice di tre forze / principi in tutti i fenomeni.",
+			"meaning": "Impulsore - trasmettitore - ricevitore / trasformatore. Trinità di principi che si compenetrano, producono e condizionano a vicenda. Nella logica del linguaggio: soggetto, attività, oggetto.",
+			"numberAndQuantity": "VENTUNO. 21 è l'insieme triangolare di 6 (1 + 2 + 3 + 4 + 5 + 6 = 21). Come forma sequenziale di 15 (1 + 2 + 3 + 4 + 5), combina la qualità di 6 AMORE per formare 15 SIGNIFICATO.",
+			"contextualDescription": "Terzo elemento della triade delle abilità del livello cosmico (19, 20, 21). Potere ricettivo e reattivo. Analogo a 12 del livello mentale e 3 del livello elementare (con la stessa somma trasversale, posizione e qualità di base).",
+			"oracle": "Trova il lavoro della trinità nel soggetto della tua domanda!"
+		},
+		"22": {
+			"name": "Scarabeo",
+			"figurativeElement": "Scarabeo.",
+			"ability": "",
+			"meaning": "Il mondo del terreno, materiale, transitorio. Tutto ciò che ha un inizio ha una fine. La transitorietà dell'individuo. Ciclico. La transitorietà cerca la permanenza attraverso la ripetizione, non l'imperitura. Venire / andare / tornare. La vita cosmica come forma di esistenza intermittente. Nella mitologia egizia, uno scarabeo cosmico muove il sole nella notte dopo il tramonto attraverso il mondo sotterraneo fino al luogo del suo sorgere al mattino.",
+			"numberAndQuantity": "VENTIDUE. Il numero triangolare di 5 (15 SIGNIFICATO) sta sopra il sette (7 PANTERA = individuo indomito). Nell'ambito dell'effimero, i significati limitano il mondo con comandamenti e proibizioni.",
+			"contextualDescription": "Primo dei tre luoghi di azione in cui le abilità (19, 20, 21) si manifestano a livello cosmico. Elemento impulsivo e attivo della triade dei centri di azione. Analogo a 4 nel livello elementare e 13 nel livello mentale (con la stessa somma trasversale, posizione e qualità di base).",
+			"oracle": "Presta attenzione alle cose materiali e transitorie!"
+		},
+		"23": {
+			"name": "Onda",
+			"figurativeElement": "Onda, oscillazione.",
+			"ability": "",
+			"meaning": "L'immateriale, il continuo. Il mondo dell'imperituro. Senza inizio, senza fine. Immateriale. Onnipresente. Eterno ADESSO. Luce. Comunicazione cosmica. Nella mitologia egizia, l'oceano primordiale NUN, che esisteva prima del mondo e da cui il Sole Creatore ha fatto emergere il nostro mondo. 23 ONDA porta 'intuizione' dal mondo dell'inimmaginabile (24 PIEDI IN PREGHIERA) nel presente materiale 22 SCARABEO.",
+			"numberAndQuantity": "VENTITRÈ. Il quadrato 4 × 4 = 16 PANTERE, sta sopra il sette (7 PANTERA = individuo indomito). La somma di ciò che è stato appreso, con i suoi limiti, punta all'illimitato.",
+			"contextualDescription": "Secondo dei tre luoghi di azione in cui le abilità (19, 20, 21) si manifestano a livello cosmico. Elemento connettivo e bilanciante della triade dei centri di azione. Analogo a 5 nel livello elementare e 14 nel livello mentale (con la stessa somma trasversale, posizione e qualità di base).",
+			"oracle": "Presta attenzione all'immateriale e all'imperituro!"
+		},
+		"24": {
+			"name": "Piedi in preghiera",
+			"figurativeElement": "'Piedi' che si toccano come in una postura di preghiera, collegati da una linea paradossale.",
+			"ability": "",
+			"meaning": "Il mondo dell'inspiegabile, dell'incomprensibile, inaccessibile alla mente. La sensazione di un mondo oltre i limiti dell'immaginabile. Amore cosmico. Verificare il potere della propria immaginazione. Verificare i suoi limiti. Piacere e gioia come ricompensa per aver superato questi limiti.",
+			"numberAndQuantity": "VENTIQUATTRO. Raddoppiamento dei sette che si fondono l'uno nell'altro. Un individuo si moltiplica nelle proprie riflessioni. Enigma e inspiegabilità. Rappresentato diversamente: 17 scale stanno sopra la settenza (7 = individuo indomito). Possibilità di andare oltre i limiti del concepibile.",
+			"contextualDescription": "Terzo dei tre luoghi di azione in cui le abilità (19, 20, 21) si manifestano a livello cosmico. Elemento ricettivo e reattivo nella triade dei centri di azione. Analogo a 6 nel livello elementare e 15 nel livello mentale (con la stessa somma trasversale, posizione e qualità di base).",
+			"oracle": "Presta attenzione al mondo oltre l'immaginabile!"
+		},
+		"25": {
+			"name": "Evoluzione",
+			"figurativeElement": "Spirale che sale dalla superficie. Sforzo verso l'alto.",
+			"ability": "",
+			"meaning": "Fase di riconoscimento della propria posizione nell'evoluzione. La forza motrice per crescere, svilupparsi, ascendere. La propria evoluzione personale all'interno dell'evoluzione collettiva circostante.",
+			"numberAndQuantity": "VENTICINQUE. Il quadrato 5 × 5. Quadrato del numero 5 (BOCCA = comunicazione.) Comunicazione cosmo con individuo. Quadrato Magico. Quadrato magico di 5 × 5. somma in tutte le direzioni, anche diagonalmente, 65. 6 + 5 = 11 (LA FORZA). Al centro 13 (SONNO).",
+			"contextualDescription": "Prima stazione della triade delle fasi in cui le abilità (19, 20, 21) si sviluppano nel piano cosmico. Fase impulso-givante e attiva. Analogo a 7 nel livello elementare e 16 nel livello mentale (con la stessa somma trasversale, posizione e qualità di base).",
+			"oracle": "Presta attenzione al tuo ruolo nell'evoluzione!"
+		},
+		"26": {
+			"name": "Horus",
+			"figurativeElement": "Falco. Lo sguardo di Horus.",
+			"ability": "",
+			"meaning": "Cambio di prospettiva, dall'alto verso il basso. Horus si allontana dalla terra. Dalla sua prospettiva, gli eventi appaiono da una nuova angolazione. Modelli e ripetizioni diventano riconoscibili.",
+			"numberAndQuantity": "VENTISEI. Il quadrato 5 × 5 + 1 elemento. Posizione sopra EVOLUZIONE.",
+			"contextualDescription": "Seconda stazione della triade delle fasi in cui le abilità (19, 20, 21) si sviluppano sul piano cosmico. Fase trasmittente e mediatrice. Analogo a 8 nel livello elementare e 17 nel livello mentale (con la stessa somma trasversale, posizione e qualità di base). 8 (EQUILIBRIO), 17 (SCALE), 26 (HORUS) sono fasi di transizione: Due direzioni sono possibili. Dubbi.",
+			"oracle": "Trova la nuova prospettiva!"
+		},
+		"27": {
+			"name": "Libertà",
+			"figurativeElement": "Figura volante.",
+			"ability": "",
+			"meaning": "Liberazione, rilascio da tutti i legami. Dalla gravità della terra così come dalla gravità del passato.",
+			"numberAndQuantity": "VENTISETTE. 3 x 3 x 3, conclusione dei tre filoni della vita. Spazio di tre triadi. Insieme triangolare di 7 senza un picco. Vicino al completamento (28).",
+			"contextualDescription": "Terza stazione della triade delle fasi in cui le abilità (19, 20, 21) si sviluppano sul piano cosmico. Fase ricettiva e reattiva. Analogo a 9 nel livello elementare e 18 nel livello mentale (con la stessa somma trasversale, posizione e qualità di base).",
+			"oracle": "Trova te stesso vicino al tuo obiettivo!"
+		},
+		"28": {
+			"name": "Vita",
+			"figurativeElement": "Ankh, geroglifico per la vita.",
+			"ability": "",
+			"meaning": "Croce con manico, croce con anello all'incrocio tra verticale e orizzontale: che sale da lì e ritorna lì. Le divinità dell'antico Egitto portavano l'ANKH come segno della loro divinità. Quando pronunciata, la sequenza di lettere A N Kh significava specchio. Come segno, indica una figura con le braccia aperte - pronta per un abbraccio, e punta a una relazione con il simbolo della dea dell'amore mesopotamica, il 'specchio della dea dell'amore' e segno di femminilità.",
+			"numberAndQuantity": "VENTOTTO. La quantità triangolare di 7: 1 + 2 + 3 + 4 + 5 + 6 + 7 = 28. 28 combina le qualità di tutti i suoi fattori: 1 + 2 + 4 + 7 + 14. Sommati insieme, arrivano a 28, moltiplicati per 784 = 28 ². In 28, il modello di base triadico della Trinità trova un nuovo inizio: Somma trasversale 2 + 8 = 10 = 1 + 0 = 1.",
+			"contextualDescription": "",
+			"oracle": "Sii l'onda nell'oceano!"
+		}
+	},
+	"start": "Inizia",
+	"next": "Continua",
+	"close": "Chiudi",
+	"calculateXY": "Calcola X e Y",
+	"calculateZ": "Calcola Z",
+	"figurativeElement": "Elemento Figurativo",
+	"ability": "Abilità",
+	"meaning": "Significato",
+	"numberAndQuantity": "Numero e Quantità",
+	"oracle": "Oracolo",
+	"instructions": "Istruzioni",
+	"oracleGameTitle": "Il Gioco-Oracolo definitivo",
+	"oracleGameSubTitle": "Un aiuto per la navigazione nel mondo",
+	"oracleGameText": "Trinity è un modello del mondo composto da simboli elementari. Trinity Tarot sviluppa questo modello in un gioco-oracolo. Basato sul 'linguaggio' intuitivo delle immagini anziché delle parole, ti permette di attivare strati più profondi della tua coscienza – e quindi immergerti in fasi più profonde di auto-riflessione e orientamento.",
+	"restart": "Ricomincia",
+	"gameInstructions": "Istruzioni del Gioco",
+	"instGameTitle": "Un Gioco-Oracolo",
+	"instLayingTitle": "Disposizione e lettura",
+	"instLayingText": "Lo scopo è aggregare coincidenze, generando ciò che lo psicologo C. G. Jung chiamava 'Singolarità'. Pensa a una domanda personale che ti sta a cuore. Un oracolo ha bisogno di una domanda per rispondere.",
+	"instAxialTitle": "Leggere l'Oracolo della Croce Assiale",
+	"instAxialText": "Queste sono le istruzioni originali, il processo qui è in realtà quasi completamente automatico.<br/><br/>Le prime due carte effettive, A e B, formano l'asse temporale della tua domanda.<br/><br/>La carta A rappresenta l'inizio della situazione o del tema della tua domanda, come il lavoro, un obiettivo personale o una relazione.<br/>La carta B indica la direzione in cui questa situazione si è sviluppata fino a questo momento.<br/><br/>Il passo successivo è determinare la carta X, il primo elemento del tuo oracolo.<br/><br/>La carta X è la carta il cui valore numerico corrisponde alla somma dei valori delle carte A e B.<br/>Se la somma supera 28, utilizza la somma dei checksum delle carte A e B.<br/>Il simbolo sulla carta X indica il comportamento o lo stato mentale su cui dovresti concentrarti per progredire positivamente lungo l'asse temporale della tua domanda.<br/><br/>Le due carte effettive successive, C e D, si riferiscono ai due poli opposti, forze e debolezze, cruciali nel contesto più ampio della tua domanda.<br/><br/>La carta Y, il secondo elemento del tuo oracolo, si determina con la stessa procedura di X, sommando i valori numerici (o i checksum) delle carte C e D.<br/>Il simbolo sulla carta Y indica il comportamento o lo stato mentale su cui dovresti concentrarti per armonizzare i poli opposti rappresentati da C e D.<br/><br/>Infine, la somma di X e Y forma l'asse attorno al quale ruota tutto ciò che è rilevante per la tua domanda.<br/><br/>La carta risultante, Z, è l'elemento chiave e la sintesi del tuo oracolo.<br/><br/>Le procedure e i simboli del Trinity Tarot ti offrono stimoli e direzioni per l'auto-riflessione e l'orientamento.<br/>Come accadeva a Delfi, il compito del destinatario di un oracolo è interpretare questi stimoli e indicazioni attraverso libere associazioni mentali, nel contesto della propria domanda. Le descrizioni dei simboli riportate di seguito potrebbero esserti di aiuto in questo processo.",
+	"showExplanations": "Spiegazioni",
+	"ExplanationA": "Pensa a una domanda personale che ti sta a cuore. Un oracolo ha bisogno di una domanda per rispondere. Quando la domanda sarà chiara chiudi questo frame, la carta A verrà mostrata. La carta A rappresenta l'inizio della situazione o del tema della tua domanda, ad esempio, il lavoro, un obiettivo personale o una relazione.",
+	"ExplanationB": "La carta B rappresenta la direzione in cui questa situazione si è evoluta finora.",
+	"ExplanationX": "Il passo successivo consiste nel determinare la carta X, il primo elemento del tuo oracolo. La carta X è la carta il cui valore numerico equivale alla somma dei valori delle carte A e B modulo 28. Il simbolo sulla carta X indica quale comportamento o stato mentale dovresti concentrarti per avanzare positivamente lungo l'asse temporale della tua domanda.",
+	"ExplanationC": "Le successive due carte efficaci, C e D, si riferiscono ai due poli opposti, punti di forza e debolezze, che sono cruciali nel contesto più ampio della tua domanda. La carta C rappresenta il tuo punto di forza; nota che il punto di forza non è sempre positivo.",
+	"ExplanationD": "La carta D rappresenta la tua debolezza; nota che la debolezza non è sempre negativa.",
+	"ExplanationY": "La carta Y, il secondo elemento del tuo oracolo, viene determinata nello stesso modo della carta X, cioè sommando i valori numerici (o i checksum) delle carte C e D. Il simbolo sulla carta Y indica quale comportamento o stato mentale dovresti concentrarti per armonizzare i poli opposti rappresentati dalle carte C e D.",
+	"ExplanationZ": "Infine, la somma della carta X e della carta Y forma l'asse intorno al quale ruota tutto ciò che è rilevante per la tua domanda. La carta risultante, Z, è l'elemento chiave e la sintesi del tuo oracolo."
 }

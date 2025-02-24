@@ -1,31 +1,285 @@
 {
-    "start": "Start",
-    "next": "Next",
-    "close": "Close",
-    "calculateXY": "Calculate X and Y",
-    "calculateZ": "Calculate Z",
-    "figurativeElement": "Figurative Element",
-    "ability": "Ability",
-    "meaning": "Meaning",
-    "numberAndQuantity": "Number and Quantity",
-    "oracle": "Oracle",
-    "instructions": "Instructions",
-    "oracleGameTitle": "The ultimate Oracle Game",
-    "oracleGameSubTitle": "An aid to navigation in the world",
-    "oracleGameText": "Trinity is a model of the world composed of elementary symbols. Trinity Tarot develops this model into an oracle game. Based on the intuitive 'language' of images, rather than words, it enables you to activate deeper layers of your consciousness, and thereby immerse into deeper stages of self-reflection and orientation.",
-    "restart": "Restart",
-    "gameInstructions": "Game Instructions",
-    "instGameTitle": "An Oracle Game",
-    "instLayingTitle": "Laying and reading",
-    "instLayingText": "This process is about aggregating coincidences, resulting in what the psychologist C. G. Jung called 'Singularity'. Think of a personal question you care about. An oracle requires a question to answer.",
-    "instAxialTitle": "Reading the Axial Cross Oracle",
-    "instAxialText": "This are the original instructions. The process here is almost completely automatic.<br/><br/>The first two effective cards, A and B, form the time axis of your question. Card A represents the beginning of the situation or theme your question is about – for example, work, a personal goal, or a relationship. Card B represents the direction in which this situation has been heading thus far.<br/><br/>The next step is determining card X, the first element of your oracle. Card X is the card whose numerical value equates to the sum of the values of card A and B. If this sum exceeds 28, use the sum of the checksums of card A and B instead.<br/><br/>The symbol on card X indicates what behaviour or state of mind you should focus on to positively advance along the time axis of your question.<br/><br/>The next two effective cards, C and D, relate to the two opposite poles – strengths and weaknesses – that are crucial in the broader context of your question.<br/><br/>Card Y, the second element of your oracle, is determined in the same fashion as card X, that is, by adding the numerical values (or checksums) of cards C and D.<br/><br/>The symbol on card Y indicates what behaviour or state of mind you should focus on to bring into harmony the opposite poles represented by cards C and D.<br/><br/>Finally, the sum of card X and Y forms the axis around which everything relevant to your question revolves. The resulting card, Z, is the key element and synthesis of your oracle.<br/><br/>The procedures and symbols of Trinity Tarot provide you with stimuli and directions for self-reflection and orientation. As it was in Delphi, your task as the recipient of an oracle is to interpret these stimuli and directions, in free mental association, within the context of your question. The descriptions of the symbols below might help you to that end.",
-    "showExplanations": "Explanations",
-    "ExplanationA": "The first two effective cards, A and B, form the time axis of your question. Card A represents the beginning of the situation or theme your question is about, for example, work, a personal goal, or a relationship.",
-    "ExplanationB": "Card B represents the direction in which this situation has been heading thus far.",
-    "ExplanationX": "The next step is determining card X, the first element of your oracle. Card X is the card whose numerical value equates to the sum of the values of card A and B module 28. The symbol on card X indicates what behaviour or state of mind you should focus on to positively advance along the time axis of your question.",
-    "ExplanationC": "The next two effective cards, C and D, relate to the two opposite poles, strengths and weaknesses, that are crucial in the broader context of your question. Card C represents your strenght, note that strenght is not always good.",
-    "ExplanationD": "Card D represents your weakness, note that weakness is not always bad.",
-    "ExplanationY": "Card Y, the second element of your oracle, is determined in the same fashion as card X, that is, by adding the numerical values (or checksums) of cards C and D. The symbol on card Y indicates what behaviour or state of mind you should focus on to bring into harmony the opposite poles represented by cards C and D.",
-    "ExplanationZ": "Finally, the sum of card X and Y forms the axis around which everything relevant to your question revolves. The resulting card, Z, is the key element and synthesis of your oracle."
+	"cards": {
+		"1": {
+			"name": "Embryo",
+			"figurativeElement": "Embryo, the still unborn and already living. The fertilised egg.",
+			"ability": "The readiness to begin that precedes the first step.",
+			"meaning": "The potential beginning, a prerequisite for any real beginning. Initiating impulse that precedes every activity. Without own duration, is always to be called into being anew. Cosmological: the timeless before the Big Bang, the existing before time and space.",
+			"numberAndQuantity": "UNITY. The unity at rest in itself, before the countable multiplicity. The only indivisible before the infinity of the divisible, the atom of multiplicity. All qualities are contained in unity, which later unfold in quantities, patterns and cycles. Each subsequent number is a play form of unity. All patterns of their combinations are variants of the potentiality of unity. First element in the triad of abilities of the elementary level (1, 2, 3). Analogue to 10 in the mental level and 19 in the cosmic level (with the same cross sum, position and core quality). 10 = 1 + 0 = 1; 19 = 1 + 9 = 10 = 1 + 0 = 1.",
+			"contextualDescription": "First element in the triad of abilities of the elementary level (1, 2, 3). Analogue to 10 in the mental level and 19 in the cosmic level (with the same cross sum, position and core quality). 10 = 1 + 0 = 1; 19 = 1 + 9 = 10 = 1 + 0 = 1.",
+			"oracle": "Be ready to start!"
+		},
+		"2": {
+			"name": "Eye",
+			"figurativeElement": "Seeing eye, archeogram for waking and perceiving in every form. Hieroglyph SIGHT and DOING.",
+			"ability": "Perceiving: outer and inner senses: seeing, hearing, feeling, smelling, thinking, sensing, emotions.",
+			"meaning": "Overall ability to perceive. Prerequisite for this: Alertness. Perception is a prerequisite for consciousness and creativity. Perception connects the perceiving with the perceived: Subject with object. To the ego, a counterpart. The beginning of duality. With apparent pairs of opposites: good/bad, light/dark, above/below. The all-connecting principle in elementary life enables the active element (1) to give impulses to the passive/receiving element (3) and the latter to react to them.",
+			"numberAndQuantity": "TWO. The duality, the antipodes. The tension between them forms the first line. Duality. Doubling/Reflection of the unity that recognises itself in the opposite. The universe: literally the facing. Second element in the triad of abilities of the elementary level (1, 2, 3). Connecting force. Analogue to 11 in the mental plane and 20 in the cosmic plane (with the same cross sum and position).",
+			"contextualDescription": "Second element in the triad of abilities of the elementary level (1, 2, 3). Connecting force. Analogue to 11 in the mental plane and 20 in the cosmic plane (with the same cross sum and position).",
+			"oracle": "Pay attention to perceive! Be awake!"
+		},
+		"3": {
+			"name": "Step",
+			"figurativeElement": "Walking legs, hieroglyph for movement.",
+			"ability": "Movement: physical movement, mental movement, spiritual movement. Change of location, growth, fertility, development.",
+			"meaning": "The dimension of time in space. Movement is the sum and consequence of the first two elements. Every action is movement. Breathing is movement. Thinking is movement. Growth is movement. Remembering moves the past into the now. Expecting is a form of remembering. The trinity plays a special role in all traditions. It forms a new active unity. Trinity from the interaction of three principles: active - reactive/receiving - mediating/creative. All good things come in threes. Faith / love / hope. The beautiful / true / good.",
+			"numberAndQuantity": "THREE. The trinity. With three different impulses that interact to create a dynamic new unity. First impulse: active, transmitter. Second impulse: receptive, receiver. Third impulse: unifying. Shape: the triangle, three points define the surface. Third element in the triad of abilities of the elementary level (1, 2, 3). Analogue to 12 in the mental plane and 21 in the cosmic plane (with the same cross sum, position and core quality). The passive, accepting principle in elemental life.",
+			"contextualDescription": "Third element in the triad of abilities of the elementary level (1, 2, 3). Analogue to 12 in the mental plane and 21 in the cosmic plane (with the same cross sum, position and core quality). The passive, accepting principle in elemental life.",
+			"oracle": "Pay attention to every form of movement, physical and mental!"
+		},
+		"4": {
+			"name": "Hand",
+			"figurativeElement": "Hand, the world of actions, activities.",
+			"ability": "",
+			"meaning": "Every action happens in time. Its effect is in a future that will soon be the past. The impulse for action can come from the future, as well as from the past, which becomes the future through action. Fourness. Since ancient times, four has been the number of matter. Four elements, four seasons, four wind directions, four humours. Paradise had four rivers. In the centre was the tree of knowledge. Four is the active principle of the triad of places of action and provides the impulse for the receptive, passive element (6), from which it is attracted.",
+			"numberAndQuantity": "FOUR. The quaternity consists of two pairs that meet in a first form of company. It is symmetrical. Each point touches two direct neighbours and has a more distant, diagonal counterpart. The square symbolises the four elements and material order. Four points define the space and form the tetrahedron with four triangular faces, four edges and four corners. First of the three places of action where the abilities (cards 1, 2, 3) manifest on the elemental level. Connecting element in the triad of places of action. Analogue to 13 on the mental level and 22 on the cosmic level (with the same cross sum, position and core quality).",
+			"contextualDescription": "First of the three places of action where the abilities (cards 1, 2, 3) manifest on the elemental level. Connecting element in the triad of places of action. Analogue to 13 on the mental level and 22 on the cosmic level (with the same cross sum, position and core quality).",
+			"oracle": "Pay attention to actions and their effects!"
+		},
+		"5": {
+			"name": "Mouth",
+			"figurativeElement": "Mouth.",
+			"ability": "The mental ability to use the tongue as a tool.",
+			"meaning": "The world of language, of communication: All living things communicate. Animals and plants, all organs with each other, brain with intestine, cells with neighbouring cells, suns with planets. Light with gravity. 5 Communicates with 4 and 6. Language brings ‘intuition’ from the ungraspable world of emotions (6 KISS) into the world of actions (4 HAND) and the effects of actions back into the world of emotions.",
+			"numberAndQuantity": "FIVE. The set 5 is formed from two groups of three that have one element in common, which acts as a connecting bridge between the two. Five fingers. Quintessence. The cross, a point in the centre connecting four directions. Body: the pyramid, a point in the height connects four corners on the ground. Second of the three places of action / worlds on which the abilities (1, 2, 3) manifest on the elemental level. Connecting element in the triad of places of action. Analogue to 14 on the mental level and 23 on the cosmic level (with the same cross sum, position and core quality).",
+			"contextualDescription": "Second of the three places of action / worlds on which the abilities (1, 2, 3) manifest on the elemental level. Connecting element in the triad of places of action. Analogue to 14 on the mental level and 23 on the cosmic level (with the same cross sum, position and core quality).",
+			"oracle": "Pay attention to the way you communicate!"
+		},
+		"6": {
+			"name": "Kiss",
+			"figurativeElement": "Kiss.",
+			"ability": "The ability to love and to be loved.",
+			"meaning": "The world of the sensual, emotional, Eros. Quality: Love, attraction, repulsion. On a functional level, this station is linked to the elementary task of reproduction. Effectiveness is rewarded here with a release of pleasure. Similarly, mental pleasure and cosmic pleasure are perceived in the stations 15 MEANING and 24 FEET respectively. The receptive principle in elementary life. It reacts to impulses from the effective zone of the actions that it, waiting, evokes. Typical for 6, 15, 24, commandments, prohibitions and taboos have an effect here.",
+			"numberAndQuantity": "SIX. 6 is the so-called ‘perfect number’. The only number in the infinity of numbers that is both the sum and multiplication of its divisors. First triangular number: 1+2+3. Related to the other triangular numbers 10, 15, 21, 28. As a symbol: two triangles interlocked: the hexagram. Regular hexagons fill a plane without gaps. Shape of honeycomb. Third of the three places of action / worlds on which the abilities (1, 2, 3) manifest on the elemental level. Reactive element in the triad of centres of action. Reacts to impulses emanating from 4 and transmitted by 5. Analogue to 15 on the mental level and 24 on the cosmic level (with the same cross sum, position and core quality).",
+			"contextualDescription": "Third of the three places of action / worlds on which the abilities (1, 2, 3) manifest on the elemental level. Reactive element in the triad of centres of action. Reacts to impulses emanating from 4 and transmitted by 5. Analogue to 15 on the mental level and 24 on the cosmic level (with the same cross sum, position and core quality).",
+			"oracle": "Pay attention to the erotic component!"
+		},
+		"7": {
+			"name": "Panther",
+			"figurativeElement": "Panther, archeogram for the untamed, sleek.",
+			"ability": "The impulsive and active power of youth.",
+			"meaning": "First phase of realisation: youth, Curiosity. Individuality. Testing one’s own strength and limits. Setting off into new territory. Release from the protection of the family. 7 - a special number in many traditions: seven days. Seven notes in the octave. Seven colours in the rainbow.",
+			"numberAndQuantity": "SEVEN. 6 points around an inner core of equal size. The outer ones protect/hide the inner one, which gives them support. First station in the triad Phases in which the abilities (1,2,3) develop on the elementary level. Impulsive and active power. Analogue to 16 on the mental level and 25 on the cosmic level (with the same cross sum, position and core quality).",
+			"contextualDescription": "First station in the triad Phases in which the abilities (1,2,3) develop on the elementary level. Impulsive and active power. Analogue to 16 on the mental level and 25 on the cosmic level (with the same cross sum, position and core quality).",
+			"oracle": "Be untamed!"
+		},
+		"8": {
+			"name": "Balance",
+			"figurativeElement": "Loop, ascending and descending.",
+			"ability": "",
+			"meaning": "The path of midlife. The stabilising power of balance. ‘Justice’. The righteous person pays attention to equal treatment of all parties and puts himself in the background. Phase of balancing. 8, 17, 26 are transitional phases: Doubt. Two directions are possible. Mediates between youth (7 PANTHER) and old age (9 REST).",
+			"numberAndQuantity": "EIGHT. The square 3 x 3 without a centre. Or 2 x 4, scales of the material. 8 = 2 ³, first cube. As a solid: the octagon, the double pyramid, crystal form of carbon, diamond. The quantity 8 can be divided three times into equal parts. Second station in the triad of phases in which the abilities (1,2,3) develop on the elementary level. Connecting and balancing force. Analogue to 17 on the mental level and 26 on the cosmic level (with the same cross sum, position and core quality).",
+			"contextualDescription": "Second station in the triad of phases in which the abilities (1,2,3) develop on the elementary level. Connecting and balancing force. Analogue to 17 on the mental level and 26 on the cosmic level (with the same cross sum, position and core quality).",
+			"oracle": "Pay attention to balance!"
+		},
+		"9": {
+			"name": "Rest",
+			"figurativeElement": "Resting figure.",
+			"ability": "",
+			"meaning": "Phase: old age, ‘earned rest’, accumulated experience.",
+			"numberAndQuantity": "NINE. The totality of the basic numbers in a square. Magic square. A new cycle begins after 9. Magic square 3 × 3. sums, also diagonally 15. Third station in the triad of phases in which the abilities (1,2,3) develop on the elementary level. Receptive and reactive power. Analogue to 18 on the mental level and 27 on the cosmic level (with the same cross sum, position and core quality).",
+			"contextualDescription": "Third station in the triad of phases in which the abilities (1,2,3) develop on the elementary level. Receptive and reactive power. Analogue to 18 on the mental level and 27 on the cosmic level (with the same cross sum, position and core quality).",
+			"oracle": "Strength resides in tranquillity!"
+		},
+		"10": {
+			"name": "Key",
+			"figurativeElement": "Key.",
+			"ability": "The mental ability to use the mind as a tool.",
+			"meaning": "Entry into the mental world. Distinguishes the human world from the animal world. Biblically: the fruit of the tree of knowledge. Leaving paradise. Opening up culture. The key opens and closes. The mental world is the bridge between elemental life and the cosmos. With its own limits.",
+			"numberAndQuantity": "TEN. Triangular set of 1 + 2 + 3 + 4, related as a form to the other triangular sets 6, 15, 21, 28. Shows the effect of the three basic faculties 1, 2, 3 on matter 4. In antiquity: Tetraktys: sign of perfection and completion. The quantity 8 can be divided three times into equal parts. First element of the triad of faculties of the mental plane (10, 11, 12). Active and impulse-giving power. Analogue to 1 in the elemental plane and 19 in the cosmic plane (with the same cross sum, position and core quality).",
+			"contextualDescription": "First element of the triad of faculties of the mental plane (10, 11, 12). Active and impulse-giving power. Analogue to 1 in the elemental plane and 19 in the cosmic plane (with the same cross sum, position and core quality).",
+			"oracle": "Use the mind as a tool!"
+		},
+		"11": {
+			"name": "Force",
+			"figurativeElement": "Raised hands and arms, hieroglyph KA, life force.",
+			"ability": "The mental ability to seek and find force.",
+			"meaning": "Classic prayer posture. The touch of heaven, contact with higher forces. (11) FORCE transmits the impulse of thought from (10 KEY) and enables (12) REVOLUTION.",
+			"numberAndQuantity": "ELEVEN. The set 11 connects two triangles of 1+2+3 at a common point. Two worlds meet at this point and merge into one another. 11 is the first composite quantity, connecting top and bottom: Force is released here. Second element of the triad of abilities of the mental plane (10, 11, 12). Connecting and balancing power. Analogue to 2 in the elemental plane and 20 in the cosmic plane (with the same cross sum, position and core quality).",
+			"contextualDescription": "Second element of the triad of abilities of the mental plane (10, 11, 12). Connecting and balancing power. Analogue to 2 in the elemental plane and 20 in the cosmic plane (with the same cross sum, position and core quality).",
+			"oracle": "Find the force!"
+		},
+		"12": {
+			"name": "Revolution",
+			"figurativeElement": "Counter-rotating spirals.",
+			"ability": "The mental ability to change the direction of thought.",
+			"meaning": "Application of thought and strength. Independence. Readiness for revolution.",
+			"numberAndQuantity": "TWELVE. Three interlocking sevens (7=individual) form a triangle with truncated points and wandering centres. Individual freedom. 12 is the number with many divisors: 1, 2, 3, 4, 6 and 12. The dozen has therefore been used since antiquity as the basis for many counting and measurement systems. Since the early civilisations of Mesopotamia, the day has been divided into two twelve-hour periods and the year into 12 months with 12 stations and signs of the zodiac. Third element of the triad of abilities of the mental plane (10, 11, 12). Receptive and reactive power. Analogue to 3 in the elemental plane and 21 in the cosmic plane (with the same cross sum, position and core quality).",
+			"contextualDescription": "Third element of the triad of abilities of the mental plane (10, 11, 12). Receptive and reactive power. Analogue to 3 in the elemental plane and 21 in the cosmic plane (with the same cross sum, position and core quality).",
+			"oracle": "Be ready for revolution!"
+		},
+		"13": {
+			"name": "Sleep",
+			"figurativeElement": "Sleeping face.",
+			"ability": "",
+			"meaning": "The world of sleep and dreams. The antithesis of waking. Sleep: Brother of death. Hypnos (sleep) brother of Thanatos (death). In Greek mythology, sons of Nyx (night) and Erebos (darkness). Sleep ends conscious perception and opens up perception of the world of personal dreams, unconscious memories and imprints. Waking and sleeping: cyclical repetition. Transience seeks duration in repetition. Inspiration from 12 REVOLUTION and 14 SOUL is possible in dreams. 13 can give impulse to action (4 HAND).",
+			"numberAndQuantity": "THIRTEEN. Two interlocked tetraktys triangles. (1+2+3+4). They form a six-pointed star with the quantity 7 as the centre. The outer tips of the triangles form an open, second shell. 13 spheres of the same size fill an outer sphere with three times its diameter. The inner core touches all the outer spheres, which circle around it in 4 rows around 4 axes and form a shell. First of the three sites of action in which the abilities (10, 11, 12) manifest on a mental level. Active and impulse-giving element in the triad of centres of action. Analogue to 4 on the elemental level and 22 on the cosmic level (with the same cross sum, position and core quality).",
+			"contextualDescription": "First of the three sites of action in which the abilities (10, 11, 12) manifest on a mental level. Active and impulse-giving element in the triad of centres of action. Analogue to 4 on the elemental level and 22 on the cosmic level (with the same cross sum, position and core quality).",
+			"oracle": "Pay attention to your dreams!"
+		},
+		"14": {
+			"name": "Soul",
+			"figurativeElement": "Bird with human head. Siren in Greek mythology, hieroglyph BA, soul.",
+			"ability": "",
+			"meaning": "World of the supra-personal. World of the soul. Effect of the epigenetic, collective memory. Relative immortality and supratemporality. Normative conscience. Conflict with individual-personal positions. As ‘intuition’, brings meanings from (15 MEANING) into clairvoyant dreams (13 SLEEP) and, conversely, personal experiences into the manifestations of the meanings.",
+			"numberAndQuantity": "FOURTEEN. The set 14 is formed from the sets 7+7, the experiences of one individual flow into another. Second of the three places of action where the abilities (10, 11, 12) manifest on the mental level. Connecting and balancing element of the triad of sites of action. Analogue to 5 on the elementary level and 23 on the cosmic level. (with the same cross sum, position and core quality).",
+			"contextualDescription": "Second of the three places of action where the abilities (10, 11, 12) manifest on the mental level. Connecting and balancing element of the triad of sites of action. Analogue to 5 on the elementary level and 23 on the cosmic level. (with the same cross sum, position and core quality).",
+			"oracle": "Pay attention to the supra-personal!"
+		},
+		"15": {
+			"name": "Meaning",
+			"figurativeElement": "Hand with pointing index finger.",
+			"ability": "",
+			"meaning": "World of meanings, assignments and regulations, commandments, prohibitions and taboos. Meanings are products of thought, moulds of the mental structure that created them. The overall form of all mental imprints and restrictions on the freedom of the individual. The search for meaning promises pleasure as a reward for finding it (as in solving puzzles), as well as giving ‘meaning’ to life. This phenomenon corresponds to the erotic component of 6 KISS and the experience of pleasure in cosmic enlightenment 24 FEET.",
+			"numberAndQuantity": "FIFTEEN. 15 is the triangular set of 1 + 2 + 3 + 4 + 5. As a form it is related to the other triangular sets 6, 10, 21, 28. Communication 5 is added to perfection (10). Third of the three places of action in which the abilities (10, 11, 12) manifest themselves on a mental level. Receptive and reactive element of the triad of centres of action. Analogue to 6 on the elementary level and 24 on the cosmic level. (with the same cross sum, position and core quality). Typical for 6, 15, 24 are promises of pleasure as well as commandments, prohibitions and taboos.",
+			"contextualDescription": "Third of the three places of action in which the abilities (10, 11, 12) manifest themselves on a mental level. Receptive and reactive element of the triad of centres of action. Analogue to 6 on the elementary level and 24 on the cosmic level. (with the same cross sum, position and core quality). Typical for 6, 15, 24 are promises of pleasure as well as commandments, prohibitions and taboos.",
+			"oracle": "Recognise the meaning!"
+		},
+		"16": {
+			"name": "Anchor",
+			"figurativeElement": "Anchor.",
+			"ability": "",
+			"meaning": "Anchoring what has been learnt. Building on what has been learnt. Fight against forgetting. Completion of the apprenticeship. Testing what has been learnt. Recognising its limits.",
+			"numberAndQuantity": "SIXTEEN. 16 square 4x4. 4 rows with 4 units each. Image of the artificially ordered and constructed. Artificial and unstable. First station of the triad of phases in which the abilities (10,11,12) develop on the mental level. Impulsive, active power. Analogue to 7 on the elementary level and 25 on the cosmic level (with the same cross sum, position and core quality).",
+			"contextualDescription": "First station of the triad of phases in which the abilities (10,11,12) develop on the mental level. Impulsive, active power. Analogue to 7 on the elementary level and 25 on the cosmic level (with the same cross sum, position and core quality).",
+			"oracle": "Everything learnt is limited!"
+		},
+		"17": {
+			"name": "Stairs",
+			"figurativeElement": "Stairs.",
+			"ability": "",
+			"meaning": "Transition between two levels. Decision: upwards / downwards / standstill. 8, 17, 26 are transitional phases: Doubt. Two directions possible. Height makes depth. Mountains make valleys. Pride comes before a fall.",
+			"numberAndQuantity": "SEVENTEEN. Two squares 3 × 3, top and bottom, with a common element as a transition point. Decision point for ascent or descent. Second station of the triad of phases in which the abilities (10,11,12) develop in the mental plane. Connecting and balancing force. Analogue to 8 in the elemental plane and 26 in the cosmic plane (with the same cross sum, position and core quality).",
+			"contextualDescription": "Second station of the triad of phases in which the abilities (10,11,12) develop in the mental plane. Connecting and balancing force. Analogue to 8 in the elemental plane and 26 in the cosmic plane (with the same cross sum, position and core quality).",
+			"oracle": "Decide: up or down!"
+		},
+		"18": {
+			"name": "Cobra",
+			"figurativeElement": "Upright cobra. Uraeus the erect cobra was the central element on the pharaoh’s crown. It defends the knowledge behind the king’s forehead.",
+			"ability": "",
+			"meaning": "Defence of valuable knowledge. Separation of experienced understanding from learnt knowledge. Willingness to defend truth. Defence of the mental world as a whole.",
+			"numberAndQuantity": "EIGHTEEN. A circle of six elements, surrounded by a hexagon of twelve elements, surround and protect a centre that is kept empty. The set 19, (THE SUN) without the central core. 18 shows proximity to the sun, whose centre it defends. Third station of the triad of phases in which the abilities (10,11,12) develop in the mental plane. Receptive and reactive power. Analogue to 9 in the elemental plane and 27 in the cosmic plane (with the same cross sum, position and core quality).",
+			"contextualDescription": "Third station of the triad of phases in which the abilities (10,11,12) develop in the mental plane. Receptive and reactive power. Analogue to 9 in the elemental plane and 27 in the cosmic plane (with the same cross sum, position and core quality).",
+			"oracle": "Scrutinise what you are defending!"
+		},
+		"19": {
+			"name": "Sun",
+			"figurativeElement": "Ideogram sun, gold, unmodified hieroglyph.",
+			"ability": "Perception of the quality ‘sun’: light, spiritual splendour, beauty.",
+			"meaning": "Beauty is a form of joy. Joy, pleasure; beauty is reward and nourishment, compass and signpost.",
+			"numberAndQuantity": "NINETEEN. A central core in the centre and six elements that form a protective shell around this core (together the number 7, the sevenness, the individual). Therefore a hexagon of twelve equally sized points as a second shell. Protection and stability. First element of the triad of abilities in the cosmic plane (19, 20, 21). Energising and active force. Analogue to 10 in the mental plane and 1 in the elemental plane (with the same cross sum and position).",
+			"contextualDescription": "First element of the triad of abilities in the cosmic plane (19, 20, 21). Energising and active force. Analogue to 10 in the mental plane and 1 in the elemental plane (with the same cross sum and position).",
+			"oracle": "Pay attention to splendour, joy, beauty!"
+		},
+		"20": {
+			"name": "Star",
+			"figurativeElement": "Ideogram star and human being.",
+			"ability": "Perception of the connection between man and the cosmos.",
+			"meaning": "Microcosm / Macrocosm. Outer star and inner star. Leonardo: ‘He who has turned to his star no longer turns back’.",
+			"numberAndQuantity": "TWENTY. 20 presents itself as two triangular sets of 10 (1+2+3+4), which lie with their tips against each other. One triangle points upwards, the other downwards. Microcosm and macrocosm touch each other.",
+			"contextualDescription": "Second element of the triad of abilities of the cosmic level (19, 20, 21). Connecting and balancing force. Analogue to 11 of the mental plane and 2 of the elemental plane (with the same cross sum, position and core quality).",
+			"oracle": "Feel the inner star!"
+		},
+		"21": {
+			"name": "Trinity",
+			"figurativeElement": "3 elements form a unit by flowing into one another. Continuous inversion. Figure without outside and inside. One heart shape emerges from another, forming the first.",
+			"ability": "Perception of the threefold interaction of three forces / principles in all phenomena.",
+			"meaning": "Impulse giver - transmitter - receiver / transformer. Trinity of principles that interpenetrate, produce and condition each other. In the logic of language: subject, activity, object.",
+			"numberAndQuantity": "TWENTY-ONE. 21 is the triangular set of 6 (1 + 2 + 3 + 4 + 5 + 6 = 21). As a sequential form of 15 (1 + 2 + 3 + 4 + 5), it combines the quality of 6 LOVE to form 15 MEANING.",
+			"contextualDescription": "Third element of the triad of abilities of the cosmic level (19, 20, 21). Receptive and reactive power. Analogue to 12 of the mental level and 3 of the elemental level (with the same cross sum, position and core quality).",
+			"oracle": "Find the work of trinity in the subject of your question!"
+		},
+		"22": {
+			"name": "Beetle",
+			"figurativeElement": "Beetle, Scarab.",
+			"ability": "",
+			"meaning": "The world of the earthly, material, transient. Everything that has a beginning has an end. The transience of the individual. Cyclic. Transience seeks permanence through repetition, not imperishability. Coming / going / returning. Cosmic life as an intermittent form of existence. In Egyptian mythology, a cosmic scarab moves the sun in the night after its setting through the underworld to the place of its rising in the morning.",
+			"numberAndQuantity": "TWENTY-TWO. The triangular number of 5 (15 MEANING) stands above the seven (7 PANTHER = untamed individual). In the realm of the ephemeral, meanings limit the world with commandments and prohibitions.",
+			"contextualDescription": "First of the three places of action in which the abilities (19, 20, 21) manifest themselves on the cosmic level. Impulsive and active element of the triad of centres of action. Analogue to 4 on the elementary level and 13 on the mental level (with the same cross sum, position and core quality).",
+			"oracle": "Pay attention to material and transient things!"
+		},
+		"23": {
+			"name": "Wave",
+			"figurativeElement": "Wave, oscillation.",
+			"ability": "",
+			"meaning": "The immaterial, the continuous. The world of the imperishable. Without beginning, without end. Immaterial. Omnipresent. Eternal NOW. Light. Cosmic communication. In Egyptian mythology, the primordial ocean NUN, which existed before the world and from which the Creator Sun brought forth our world. 23 WAVE brings ‘intuition’ from the world of the unimaginable (24 PRAYING FEET) into the material present 22 BEETLE.",
+			"numberAndQuantity": "TWENTY-THREE. The square 4 × 4 = 16 PANTHERS, stands above the seven (7 PANTHER = untamed individual). The sum of what has been learnt, with its limitedness, points to the unlimited.",
+			"contextualDescription": "Second of the three places of action where the abilities (19, 20, 21) manifest themselves on the cosmic level. Connecting and balancing element of the triad of centres of action. Analogue to 5 on the elementary level and 14 on the mental level (with the same cross sum, position and core quality).",
+			"oracle": "Pay attention to the immaterial and the imperishable!"
+		},
+		"24": {
+			"name": "Praying Feet",
+			"figurativeElement": "‘Feet’ touching each other as if in a praying posture, connected by a paradoxical line.",
+			"ability": "",
+			"meaning": "World of the inexplicable, the incomprehensible, inaccessible to the mind. A sense of a world beyond the limits of the imaginable. Cosmic love. Testing the power of one’s own imagination. Testing its limits. Pleasure and joy as a reward for exceeding these limits.",
+			"numberAndQuantity": "TWENTY-FOUR. Doubling of sevens that merge into one another. An individual multiplies itself in its own reflections. Enigma and inexplicability. Represented differently: 17 stairs stand above the sevenness (7 = untamed individual). Possibility of going beyond the limits of the conceivable.",
+			"contextualDescription": "Third of the three places of action in which the abilities (19, 20, 21) manifest themselves on a cosmic level. Receptive and reactive element in the triad of sites of action. Analogue to 6 on the elementary level and 15 on the mental level (with the same cross sum, position and core quality).",
+			"oracle": "Pay attention to the world beyond the imaginable!"
+		},
+		"25": {
+			"name": "Evolution",
+			"figurativeElement": "Spiral rising from the surface. Striving upwards.",
+			"ability": "",
+			"meaning": "Phase of recognising one’s own position in evolution. The driving force to grow, to develop, to ascend. One’s own personal evolution within the surrounding collective evolution.",
+			"numberAndQuantity": "TWENTY-FIVE. The square 5 × 5. Square of the number 5 (MOUTH = communication.) Communication cosmos with individual. Magic Square. Magic square of 5 × 5. sum in all directions, also diagonally, 65. 6 + 5 = 11 (THE FORCE). In the centre 13 (SLEEP).",
+			"contextualDescription": "First station of the triad of phases in which the abilities (19, 20, 21) develop in the cosmic plane. Impulse-giving and active phase. Analogue to 7 in the elementary level and 16 in the mental level (with the same cross sum, position and core quality).",
+			"oracle": "Pay attention to your role in evolution!"
+		},
+		"26": {
+			"name": "Horus",
+			"figurativeElement": "Falcon. The gaze of Horus.",
+			"ability": "",
+			"meaning": "Change of perspective, from far above to events far below. Horus moves away from the earthly. From his perspective, events appear from a new angle. Patterns and repetitions become recognisable.",
+			"numberAndQuantity": "TWENTY-SIX. The square 5 × 5 + 1 element. Position above EVOLUTION.",
+			"contextualDescription": "Second station of the triad of phases in which the abilities (19, 20, 21) develop on the cosmic level. Transmitting and mediating phase. Analogue to 8 on the elementary level and 17 on the mental level (with the same cross sum, position and core quality). 8 (BALANCE), 17 (STAIRS), 26 (HORUS) are transitional phases: Two directions are possible. Doubts.",
+			"oracle": "Find the new perspective!"
+		},
+		"27": {
+			"name": "Freedom",
+			"figurativeElement": "Flying figure.",
+			"ability": "",
+			"meaning": "Liberation, release from all bonds. From the gravity of the earthly as well as from the gravity of the past.",
+			"numberAndQuantity": "TWENTY-SEVEN. 3 x 3 x 3, conclusion of the three strands of life. Space of three triads. Triangular set of 7 without a peak. Close to completion (28).",
+			"contextualDescription": "Third station of the triad of phases in which the abilities (19, 20, 21) develop on a cosmic level. Receptive and reactive phase. Analogue to 9 in the elementary level and 18 in the mental level (with the same cross sum, position and core quality).",
+			"oracle": "Find yourself close to your goal!"
+		},
+		"28": {
+			"name": "Life",
+			"figurativeElement": "Ankh, hieroglyph for life.",
+			"ability": "",
+			"meaning": "Handle Cross, cross with loop at the intersection of vertical and horizontal: rising from there and returning there. The ancient Egyptian deities carried ANKH as a sign of their divinity. When pronounced, the sequence of letters A N Kh meant mirror. As a sign, it indicates a figure with outstretched arms - ready for an embrace, and points to a relationship with the Mesopotamian Venus symbol, the ‘mirror of the goddess of love’ and a sign of femininity.",
+			"numberAndQuantity": "TWENTY-EIGHT. The triangular quantity of 7: 1 + 2 + 3 + 4 + 5 + 6 + 7 = 28. 28 combines the qualities of all its factors: 1 + 2 + 4 + 7 + 14. Added together, they add up to 28, multiplied by 784 = 28 ². In 28, the triadic basic pattern of Trinity finds a new beginning: Cross sum 2 + 8 = 10 = 1 + 0 = 1.",
+			"contextualDescription": "",
+			"oracle": "Be the wave in the ocean!"
+		}
+	},
+	"start": "Start",
+	"next": "Next",
+	"close": "Close",
+	"calculateXY": "Calculate X and Y",
+	"calculateZ": "Calculate Z",
+	"figurativeElement": "Figurative Element",
+	"ability": "Ability",
+	"meaning": "Meaning",
+	"numberAndQuantity": "Number and Quantity",
+	"oracle": "Oracle",
+	"instructions": "Instructions",
+	"oracleGameTitle": "The ultimate Oracle Game",
+	"oracleGameSubTitle": "An aid to navigation in the world",
+	"oracleGameText": "Trinity is a model of the world composed of elementary symbols. Trinity Tarot develops this model into an oracle game. Based on the intuitive 'language' of images, rather than words, it enables you to activate deeper layers of your consciousness, and thereby immerse into deeper stages of self-reflection and orientation.",
+	"restart": "Restart",
+	"gameInstructions": "Game Instructions",
+	"instGameTitle": "An Oracle Game",
+	"instLayingTitle": "Laying and reading",
+	"instLayingText": "This process is about aggregating coincidences, resulting in what the psychologist C. G. Jung called 'Singularity'. Think of a personal question you care about. An oracle requires a question to answer.",
+	"instAxialTitle": "Reading the Axial Cross Oracle",
+	"instAxialText": "This are the original instructions. The process here is almost completely automatic.<br/><br/>The first two effective cards, A and B, form the time axis of your question. Card A represents the beginning of the situation or theme your question is about – for example, work, a personal goal, or a relationship. Card B represents the direction in which this situation has been heading thus far.<br/><br/>The next step is determining card X, the first element of your oracle. Card X is the card whose numerical value equates to the sum of the values of card A and B. If this sum exceeds 28, use the sum of the checksums of card A and B instead.<br/><br/>The symbol on card X indicates what behaviour or state of mind you should focus on to positively advance along the time axis of your question.<br/><br/>The next two effective cards, C and D, relate to the two opposite poles – strengths and weaknesses – that are crucial in the broader context of your question.<br/><br/>Card Y, the second element of your oracle, is determined in the same fashion as card X, that is, by adding the numerical values (or checksums) of cards C and D.<br/><br/>The symbol on card Y indicates what behaviour or state of mind you should focus on to bring into harmony the opposite poles represented by cards C and D.<br/><br/>Finally, the sum of card X and Y forms the axis around which everything relevant to your question revolves. The resulting card, Z, is the key element and synthesis of your oracle.<br/><br/>The procedures and symbols of Trinity Tarot provide you with stimuli and directions for self-reflection and orientation. As it was in Delphi, your task as the recipient of an oracle is to interpret these stimuli and directions, in free mental association, within the context of your question. The descriptions of the symbols below might help you to that end.",
+	"showExplanations": "Explanations",
+	"ExplanationA": "Think of a personal question you care about. An oracle requires a question to answer. When ready, close this frame, and card A will be shown. Card A represents the beginning of the situation or theme your question is about, for example, work, a personal goal, or a relationship.",
+	"ExplanationB": "Card B represents the direction in which this situation has been heading thus far.",
+	"ExplanationX": "The next step is determining card X, the first element of your oracle. Card X is the card whose numerical value equates to the sum of the values of card A and B module 28. The symbol on card X indicates what behaviour or state of mind you should focus on to positively advance along the time axis of your question.",
+	"ExplanationC": "The next two effective cards, C and D, relate to the two opposite poles, strengths and weaknesses, that are crucial in the broader context of your question. Card C represents your strenght, note that strenght is not always good.",
+	"ExplanationD": "Card D represents your weakness, note that weakness is not always bad.",
+	"ExplanationY": "Card Y, the second element of your oracle, is determined in the same fashion as card X, that is, by adding the numerical values (or checksums) of cards C and D. The symbol on card Y indicates what behaviour or state of mind you should focus on to bring into harmony the opposite poles represented by cards C and D.",
+	"ExplanationZ": "Finally, the sum of card X and Y forms the axis around which everything relevant to your question revolves. The resulting card, Z, is the key element and synthesis of your oracle."
 }

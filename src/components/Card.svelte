@@ -1,62 +1,67 @@
 <script lang="ts">
-    import { locale } from 'svelte-i18n';
-    import type { Card } from '../types';
-  
-    type Props = {
-      card: Card;
-      label: string;
-      currentLanguage: 'it' | 'en';
-      onClick: (card: Card) => void;
-    }
+	import { derived } from 'svelte/store';
+	import { t } from 'svelte-i18n';
+	import type { Card } from '../types';
 
-    let { card, label, currentLanguage, onClick } = $props();
-  
-    function handleClick() {
-      onClick(card);
-    }
-  
-    function handleKeyDown(event: KeyboardEvent) {
-      if (event.key === 'Enter' || event.key === ' ') {
-        handleClick();
-      }
-    }
-  
-    function truncatedText(text: string, maxLength: number): string {
-      if (text.length <= maxLength) {
-        return text;
-      }
-      const truncated = text.slice(0, maxLength);
-      const lastSpaceIndex = truncated.lastIndexOf(' ');
-      return (lastSpaceIndex > 0 ? truncated.slice(0, lastSpaceIndex) : truncated) + '...';
-    }
+	type Props = {
+		card: Card;
+		label: string;
+		onClick: (card: Card) => void;
+	};
 
-    $effect(() => {
-      currentLanguage = $locale as 'it' | 'en';
-    });
-  </script>
-  
-  <button 
-    onclick={handleClick} 
-    onkeydown={handleKeyDown} 
-    class="flex flex-col items-center border border-gray-300 p-4 rounded-lg shadow bg-white w-72 h-96 cursor-pointer overflow-hidden whitespace-normal break-words"
-    style="font-family: 'Open Sans', Helvetica, Arial, sans-serif;"
-  >
-  <p class="font-bold text-lg overflow-hidden text-ellipsis">{label}</p>
-  
-  <img 
-    src={card.image} 
-    alt={card.name[currentLanguage]} 
-    class="w-full h-48 object-contain rounded-md"
-  />
-  
-  <div class="flex-grow overflow-hidden text-center mt-2">
-    <p class="text-sm font-bold break-words overflow-hidden text-ellipsis">#{card.id} - {card.name[currentLanguage]}</p>
-    
-    {#if label === 'Z'}
-      <p class="text-sm mt-1 break-words text-red-600 font-bold">{card.oracle[currentLanguage]}</p>
-    {:else}
-      <p class="text-xs text-gray-600 mt-1 break-words">{card.figurativeElement[currentLanguage]}</p>
-      <p class="text-xs text-gray-400 mt-1 break-words overflow-hidden text-ellipsis">{truncatedText(card.meaning[currentLanguage], 100)}</p>
-    {/if}
-  </div>
+	let { card, label, currentLanguage, onClick } = $props();
+
+	function handleClick() {
+		onClick(card);
+	}
+
+	function handleKeyDown(event: KeyboardEvent) {
+		if (event.key === 'Enter' || event.key === ' ') {
+			handleClick();
+		}
+	}
+
+	function truncatedText(text: string, maxLength: number): string {
+		if (text.length <= maxLength) {
+			return text;
+		}
+		const truncated = text.slice(0, maxLength);
+		const lastSpaceIndex = truncated.lastIndexOf(' ');
+		return (lastSpaceIndex > 0 ? truncated.slice(0, lastSpaceIndex) : truncated) + '...';
+	}
+
+	const name = derived(t, ($t) => $t(`cards.${card.id}.name`) || '');
+	const truncatedMeaning = derived(t, ($t) =>
+		truncatedText($t(`cards.${card.id}.meaning`) || '', 100)
+	);
+</script>
+
+<button
+	onclick={handleClick}
+	onkeydown={handleKeyDown}
+	class="flex h-96 w-72 cursor-pointer flex-col items-center overflow-hidden rounded-lg border border-gray-300 bg-white p-4 break-words whitespace-normal shadow"
+	style="font-family: 'Open Sans', Helvetica, Arial, sans-serif;"
+>
+	<p class="overflow-hidden text-lg font-bold text-ellipsis">{label}</p>
+
+	<img src={card.image} alt={$name} class="h-48 w-full rounded-md object-contain" />
+
+	<div class="mt-2 flex-grow overflow-hidden text-center">
+		<p class="overflow-hidden text-sm font-bold break-words text-ellipsis">
+			#{card.id} - {$name}
+		</p>
+
+		{#if label === 'Z'}
+			<p class="mt-1 text-sm font-bold break-words text-red-600">
+				{#await $t(`cards.${card.id}.oracle`) then translatedText}{translatedText.toUpperCase()}{/await}
+			</p>
+		{:else}
+			<p class="mt-1 text-xs break-words text-gray-600">
+				{#await $t(`cards.${card.id}.figurativeElement`) then translatedText}{translatedText.toUpperCase()}{/await}
+			</p>
+			<p class="mt-1 overflow-hidden text-xs break-words text-ellipsis text-gray-400">
+				{$truncatedMeaning}
+			</p>
+		{/if}
+	</div>
 </button>

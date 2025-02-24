@@ -4,10 +4,10 @@
 
 	let { children } = $props();
 	const setupResult = setupI18n();
-  </script>
-  
-  {#await setupResult}
-  <!-- Just wait -->
-  {:then}
-  	{@render children()}
-  {/await}
+</script>
+
+{#await setupResult}
+	<!-- Just wait -->
+{:then}
+	{@render children()}
+{/await}
