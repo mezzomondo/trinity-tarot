@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { tick } from 'svelte';
-	import { writable, get } from 'svelte/store';
-	import { locale, t } from 'svelte-i18n';
+	import { writable } from 'svelte/store';
+	import { t } from 'svelte-i18n';
 	import type { Card } from '../types';
 	import { cards } from '../stores/cards';
 	import { transition, type State, configureOptions } from '../stores/state';
@@ -15,7 +15,6 @@
 
 	let showInstructions = writable(false);
 	const cardSequence = ['a', 'b', 'x', 'c', 'd', 'y', 'z'];
-	let currentLanguage: 'it' | 'en' = $locale as 'it' | 'en';
 	const cardOrder = cardSequence.map((key) => ({ key, label: key.toUpperCase() }));
 	let isCardModalOpen = writable(false);
 	let isInstructionsModalOpen = writable(false);
@@ -192,8 +191,6 @@
 		if (state.current.startsWith('Explanation')) {
 			isExplanationModalOpen.set(true);
 		}
-
-		currentLanguage = $locale as 'it' | 'en';
 	});
 
 	function isLastCard(
@@ -274,7 +271,6 @@
 										<CardComponent
 											card={state.data[key as keyof typeof state.data]!}
 											label={key.toUpperCase()}
-											{currentLanguage}
 											onClick={(card: Card) => openCardModal(card)}
 										/>
 									</div>
@@ -282,7 +278,6 @@
 									<CardComponent
 										card={state.data[key as keyof typeof state.data]!}
 										label={key.toUpperCase()}
-										{currentLanguage}
 										onClick={(card: Card) => openCardModal(card)}
 									/>
 								{/if}

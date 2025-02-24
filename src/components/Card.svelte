@@ -9,7 +9,7 @@
 		onClick: (card: Card) => void;
 	};
 
-	let { card, label, currentLanguage, onClick } = $props();
+	let { card, label, onClick } = $props();
 
 	function handleClick() {
 		onClick(card);
