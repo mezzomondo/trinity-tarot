@@ -1,12 +1,13 @@
 <script lang="ts">
-    import { t } from 'svelte-i18n';
+	import { t } from 'svelte-i18n';
 
-    type Props = {
-        stateName: string;
-    };
+	type Props = {
+		stateName: string;
+	};
 
-    let { stateName } = $props();
-
+	let { stateName } = $props();
 </script>
 
-<p class="text-sm text-gray-600 mb-2">{#await $t(stateName)}{:then translatedText}{translatedText}{/await}</p>
+<p class="mb-2 text-sm text-gray-600">
+	{#await $t(stateName) then translatedText}{translatedText}{/await}
+</p>
