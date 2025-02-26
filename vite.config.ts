@@ -1,12 +1,10 @@
 import tailwindcss from '@tailwindcss/vite';
 import { svelteTesting } from '@testing-library/svelte/vite';
 import { sveltekit } from '@sveltejs/kit/vite';
-import { svelte } from '@sveltejs/vite-plugin-svelte';
 import { defineConfig } from 'vite';
-import { sveltePreprocess } from 'svelte-preprocess';
 
 export default defineConfig({
-	plugins: [svelte(), sveltekit(), tailwindcss()],
+	plugins: [sveltekit(), tailwindcss()],
 	server: {
 		// other server configurations...
 		allowedHosts: [
@@ -19,7 +17,7 @@ export default defineConfig({
 		workspace: [
 			{
 				extends: './vite.config.ts',
-				plugins: [svelte({ preprocess: sveltePreprocess() }), svelteTesting()],
+				plugins: [svelteTesting()],
 
 				test: {
 					name: 'client',
@@ -27,10 +25,7 @@ export default defineConfig({
 					clearMocks: true,
 					include: ['src/**/*.svelte.{test,spec}.{js,ts}'],
 					exclude: ['src/lib/server/**'],
-					setupFiles: ['./vitest-setup-client.ts'],
-					testTransformMode: {
-						web: ['**/*.svelte'] // ✅ Ora è nel posto giusto dentro "test"
-					}
+					setupFiles: ['./vitest-setup-client.ts']
 				}
 			},
 			{
@@ -40,10 +35,7 @@ export default defineConfig({
 					name: 'server',
 					environment: 'node',
 					include: ['src/**/*.{test,spec}.{js,ts}'],
-					exclude: ['src/**/*.svelte.{test,spec}.{js,ts}'],
-					testTransformMode: {
-						web: ['**/*.svelte'] // ✅ Ora è nel posto giusto dentro "test"
-					}
+					exclude: ['src/**/*.svelte.{test,spec}.{js,ts}']
 				}
 			}
 		]
