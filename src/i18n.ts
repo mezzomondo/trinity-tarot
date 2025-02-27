@@ -8,7 +8,7 @@ register('en', () => import('./locales/en.json'));
 export async function setupI18n() {
 	await init({
 		fallbackLocale: 'en',
-		initialLocale: 'it' // Puoi modificare questo valore per ottenere la lingua dal navigatore
+		initialLocale: 'en' // Puoi modificare questo valore per ottenere la lingua dal navigatore
 	});
 }
 
