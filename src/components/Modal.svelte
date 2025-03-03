@@ -21,6 +21,7 @@
 			<!-- Stile speciale per SMALL -->
 			<div
 				class="relative w-full max-w-md overflow-hidden rounded-lg border border-gray-300 shadow-lg"
+				data-testid="card-modal"
 			>
 				<!-- Parte superiore nera con logo -->
 				<div class="relative flex h-32 items-center justify-center bg-black">
@@ -42,6 +43,7 @@
 						<button
 							onclick={onClose}
 							class="transform rounded-lg border border-black px-6 py-2 transition-transform hover:scale-105 hover:bg-gray-200"
+							data-testid="close-modal"
 						>
 							{#await $t('close') then translatedText}{translatedText}{/await}
 						</button>
@@ -53,6 +55,7 @@
 			<div
 				class={`relative max-h-[90vh] w-full max-w-3xl overflow-y-auto rounded-lg bg-white p-6 shadow-lg 
           ${size === 'large' ? 'max-w-4xl' : 'max-w-2xl'}`}
+				data-testid="explanation-modal"
 			>
 				<button
 					onclick={onClose}
@@ -68,6 +71,7 @@
 					<button
 						onclick={onClose}
 						class="transform rounded-lg border border-black bg-white px-6 py-2 text-black shadow-md transition-transform hover:scale-105 hover:bg-gray-200"
+						data-testid="close-modal"
 					>
 						{#await $t('close') then translatedText}{translatedText}{/await}
 					</button>

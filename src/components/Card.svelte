@@ -7,9 +7,10 @@
 		card: Card;
 		label: string;
 		onClick: (card: Card) => void;
+		dataTestid: string;
 	};
 
-	let { card, label, onClick } = $props();
+	let { card, label, onClick, dataTestid } = $props();
 
 	function handleClick() {
 		onClick(card);
@@ -46,7 +47,7 @@
 
 	<img src={card.image} alt={$name} class="h-48 w-full rounded-md object-contain" />
 
-	<div class="mt-2 flex-grow overflow-hidden text-center">
+	<div class="mt-2 flex-grow overflow-hidden text-center" data-testid={dataTestid}>
 		<p class="overflow-hidden text-sm font-bold break-words text-ellipsis">
 			#{card.id} - {$name}
 		</p>

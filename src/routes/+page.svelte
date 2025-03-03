@@ -272,6 +272,7 @@
 											card={state.data[key as keyof typeof state.data]!}
 											label={key.toUpperCase()}
 											onClick={(card: Card) => openCardModal(card)}
+											dataTestid="card-component"
 										/>
 									</div>
 								{:else}
@@ -279,6 +280,7 @@
 										card={state.data[key as keyof typeof state.data]!}
 										label={key.toUpperCase()}
 										onClick={(card: Card) => openCardModal(card)}
+										dataTestid="card-component"
 									/>
 								{/if}
 							</div>
