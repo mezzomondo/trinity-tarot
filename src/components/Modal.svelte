@@ -5,12 +5,12 @@
 	type Props = {
 		isOpen: boolean;
 		onClose: () => void;
-		title: string;
 		size: 'small' | 'medium' | 'large';
+		dataTestid: string;
 		children: Snippet;
 	};
 
-	let { isOpen, onClose, title = '', size = 'medium', children } = $props();
+	let { isOpen, onClose, size = 'medium', dataTestid = '', children } = $props();
 </script>
 
 {#if isOpen}
@@ -21,6 +21,7 @@
 			<!-- Stile speciale per SMALL -->
 			<div
 				class="relative w-full max-w-md overflow-hidden rounded-lg border border-gray-300 shadow-lg"
+				data-testid={dataTestid}
 			>
 				<!-- Parte superiore nera con logo -->
 				<div class="relative flex h-32 items-center justify-center bg-black">
@@ -42,6 +43,7 @@
 						<button
 							onclick={onClose}
 							class="transform rounded-lg border border-black px-6 py-2 transition-transform hover:scale-105 hover:bg-gray-200"
+							data-testid="close-modal"
 						>
 							{#await $t('close') then translatedText}{translatedText}{/await}
 						</button>
@@ -53,6 +55,7 @@
 			<div
 				class={`relative max-h-[90vh] w-full max-w-3xl overflow-y-auto rounded-lg bg-white p-6 shadow-lg 
           ${size === 'large' ? 'max-w-4xl' : 'max-w-2xl'}`}
+				data-testid={dataTestid}
 			>
 				<button
 					onclick={onClose}
@@ -60,14 +63,12 @@
 				>
 					&times;
 				</button>
-				{#if title}
-					<h2 class="mb-4 text-2xl font-bold">{title}</h2>
-				{/if}
 				{@render children()}
 				<div class="mt-4 flex justify-end">
 					<button
 						onclick={onClose}
 						class="transform rounded-lg border border-black bg-white px-6 py-2 text-black shadow-md transition-transform hover:scale-105 hover:bg-gray-200"
+						data-testid="close-modal"
 					>
 						{#await $t('close') then translatedText}{translatedText}{/await}
 					</button>

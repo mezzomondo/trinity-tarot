@@ -69,10 +69,12 @@
 </script>
 
 <div
+	data-testid="footer-bar"
 	class="fixed right-0 bottom-0 left-0 flex items-center justify-between bg-gray-300 p-4 text-white shadow-lg"
 >
 	<!-- Bottone principale -->
 	<button
+		data-testid="start-button"
 		onclick={handleClick}
 		class="transform rounded-lg border border-black bg-white px-6 py-2 text-black shadow-md transition-transform hover:scale-105 hover:bg-gray-200"
 		disabled={isExplanation}
@@ -89,6 +91,7 @@
 	<!-- Checkbox con etichetta accessibile -->
 	<div class="flex items-center space-x-2">
 		<input
+			data-testid="toggle-explanations"
 			type="checkbox"
 			id="toggle-explanations"
 			checked={enableExplanations}
@@ -101,7 +104,11 @@
 	</div>
 
 	<!-- Link alle istruzioni -->
-	<button onclick={onShowInstructions} class="text-sm text-black hover:underline">
+	<button
+		data-testid="instructions-button"
+		onclick={onShowInstructions}
+		class="text-sm text-black hover:underline"
+	>
 		{#await $t('instructions') then translatedText}{translatedText}{/await}
 	</button>
 </div>

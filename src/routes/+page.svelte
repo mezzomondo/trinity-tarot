@@ -217,7 +217,7 @@
 </script>
 
 <div
-	class="flex min-h-screen w-screen flex-col items-center justify-start overflow-hidden bg-gray-200 p-4 pt-10 pb-24"
+	class="flex min-h-screen w-full flex-col items-center justify-start bg-gray-200 p-2 pt-10 pb-32 sm:p-4 sm:pb-36"
 	style="font-family: 'Open Sans', Helvetica, Arial, sans-serif;"
 >
 	<div class="absolute top-4 right-4">
@@ -226,7 +226,7 @@
 
 	{#if state.current === 'Initial'}
 		<div
-			class="relative flex w-full max-w-4xl flex-col items-center rounded-lg bg-gray-200 p-6 shadow-md"
+			class="relative flex w-full max-w-4xl flex-col items-center rounded-lg bg-gray-200 p-3 sm:p-6 shadow-md"
 		>
 			<h1 class="mb-2 text-center text-2xl font-bold text-black">
 				{#await $t('oracleGameTitle') then translatedText}{translatedText.toUpperCase()}{/await}
@@ -241,7 +241,7 @@
 				<img
 					src="/images/trinity-tarot-opener.jpg"
 					alt="Trinity Tarot Opener"
-					class="h-64 w-full rounded-lg object-cover"
+					class="h-48 sm:h-64 w-full rounded-lg object-cover"
 				/>
 			</div>
 			<div class="mt-6 flex flex-col items-center">
@@ -259,27 +259,31 @@
 		</div>
 	{:else}
 		<div
-			class="flex w-full max-w-full flex-col items-center gap-4 overflow-x-auto whitespace-nowrap"
+			class="flex w-full max-w-5xl flex-col items-center gap-2 sm:gap-4 mb-16 sm:mb-20"
 		>
 			{#each getVisibleCardsPerRow() as row, rowIndex (rowIndex)}
-				<div class="flex min-w-0 justify-center gap-4 overflow-x-auto sm:grid sm:grid-cols-3">
+				<div class="grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-3 sm:gap-4 md:gap-6">
 					{#each row as key, index (key)}
 						{#if state.data[key as keyof typeof state.data]}
-							<div class="shrink-0">
+							<div class="w-full max-w-[280px] mx-auto">
 								{#if isLastCard(index, rowIndex, row.length, getVisibleCardsPerRow().length)}
-									<div bind:this={state.ui.lastCardElement}>
+									<div bind:this={state.ui.lastCardElement} class="w-full">
 										<CardComponent
 											card={state.data[key as keyof typeof state.data]!}
 											label={key.toUpperCase()}
 											onClick={(card: Card) => openCardModal(card)}
+											dataTestid="card-component"
 										/>
 									</div>
 								{:else}
-									<CardComponent
-										card={state.data[key as keyof typeof state.data]!}
-										label={key.toUpperCase()}
-										onClick={(card: Card) => openCardModal(card)}
-									/>
+									<div class="w-full">
+										<CardComponent
+											card={state.data[key as keyof typeof state.data]!}
+											label={key.toUpperCase()}
+											onClick={(card: Card) => openCardModal(card)}
+											dataTestid="card-component"
+										/>
+									</div>
 								{/if}
 							</div>
 						{/if}
@@ -290,17 +294,27 @@
 	{/if}
 </div>
 
-<Modal isOpen={$isCardModalOpen} onClose={closeCardModal} size="medium">
+<Modal isOpen={$isCardModalOpen} onClose={closeCardModal} size="medium" dataTestid="card-modal">
 	{#if state.ui.selectedCard}
 		<CardModal card={state.ui.selectedCard} />
 	{/if}
 </Modal>
 
-<Modal isOpen={$isInstructionsModalOpen} onClose={closeInstructionsModal} size="large">
+<Modal
+	isOpen={$isInstructionsModalOpen}
+	onClose={closeInstructionsModal}
+	size="large"
+	dataTestid="instructions-modal"
+>
 	<InstructionsModal />
 </Modal>
 
-<Modal isOpen={$isExplanationModalOpen} onClose={closeExplanationModal} size="small">
+<Modal
+	isOpen={$isExplanationModalOpen}
+	onClose={closeExplanationModal}
+	size="small"
+	dataTestid="explanation-modal"
+>
 	{#if state.current.startsWith('Explanation')}
 		<ExplanationModal stateName={state.current} />
 	{/if}
