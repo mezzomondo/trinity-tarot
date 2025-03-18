@@ -15,7 +15,7 @@ describe('/+page.svelte', () => {
 		const { container } = render(Page);
 
 		// Select the main container, which has specific classes (you can modify to use data-testid if preferred)
-		const mainContainer = container.querySelector('div.flex.min-h-screen.w-screen');
+		const mainContainer = container.querySelector('div.flex.min-h-screen.w-full');
 		expect(mainContainer).toBeInTheDocument();
 
 		// Check the language switcher using its id
@@ -51,14 +51,14 @@ describe('/+page.svelte', () => {
 
 			// Wait for the explanation modal to appear
 			await waitFor(() => {
-				expect(screen.getByTestId('card-modal')).toBeInTheDocument();
+				expect(screen.getByTestId('explanation-modal')).toBeInTheDocument();
 			});
 
 			const closeModal = screen.getByTestId('close-modal');
 			fireEvent.click(closeModal);
 
 			await waitFor(() => {
-				expect(screen.queryByTestId('card-modal')).not.toBeInTheDocument();
+				expect(screen.queryByTestId('explanation-modal')).not.toBeInTheDocument();
 			});
 		}
 	});

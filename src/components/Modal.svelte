@@ -5,12 +5,12 @@
 	type Props = {
 		isOpen: boolean;
 		onClose: () => void;
-		title: string;
 		size: 'small' | 'medium' | 'large';
+		dataTestid: string;
 		children: Snippet;
 	};
 
-	let { isOpen, onClose, title = '', size = 'medium', children } = $props();
+	let { isOpen, onClose, size = 'medium', dataTestid = '', children } = $props();
 </script>
 
 {#if isOpen}
@@ -21,7 +21,7 @@
 			<!-- Stile speciale per SMALL -->
 			<div
 				class="relative w-full max-w-md overflow-hidden rounded-lg border border-gray-300 shadow-lg"
-				data-testid="card-modal"
+				data-testid={dataTestid}
 			>
 				<!-- Parte superiore nera con logo -->
 				<div class="relative flex h-32 items-center justify-center bg-black">
@@ -55,7 +55,7 @@
 			<div
 				class={`relative max-h-[90vh] w-full max-w-3xl overflow-y-auto rounded-lg bg-white p-6 shadow-lg 
           ${size === 'large' ? 'max-w-4xl' : 'max-w-2xl'}`}
-				data-testid="explanation-modal"
+				data-testid={dataTestid}
 			>
 				<button
 					onclick={onClose}
@@ -63,9 +63,6 @@
 				>
 					&times;
 				</button>
-				{#if title}
-					<h2 class="mb-4 text-2xl font-bold">{title}</h2>
-				{/if}
 				{@render children()}
 				<div class="mt-4 flex justify-end">
 					<button
